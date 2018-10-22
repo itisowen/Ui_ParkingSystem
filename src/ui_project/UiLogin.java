@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -25,6 +25,7 @@ public class UiLogin extends javax.swing.JFrame {
     
     public UiLogin() {
         initComponents();
+	jPanel4.setFocusable(true);
     }
 
     /**
@@ -81,6 +82,11 @@ public class UiLogin extends javax.swing.JFrame {
         user.setForeground(new java.awt.Color(204, 204, 204));
         user.setText("username");
         user.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        user.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                userFocusGained(evt);
+            }
+        });
         user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userActionPerformed(evt);
@@ -97,8 +103,13 @@ public class UiLogin extends javax.swing.JFrame {
         pass.setBackground(new java.awt.Color(35, 43, 43));
         pass.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         pass.setForeground(new java.awt.Color(204, 204, 204));
-        pass.setText("jPasswordField1");
+        pass.setText("12345678");
         pass.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passFocusGained(evt);
+            }
+        });
         pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passActionPerformed(evt);
@@ -225,6 +236,27 @@ public class UiLogin extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void userFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userFocusGained
+        if(user.getText().equals("username")){
+	    user.setText("");
+	}
+	if(pass.getText().equals("")){
+	    pass.setText("12345678");
+	}
+	
+    }//GEN-LAST:event_userFocusGained
+
+    private void passFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passFocusGained
+        if(pass.getText().equals("12345678")){
+	    pass.setText("");
+	}
+	if(user.getText().equals("")){
+	    user.setText("username");
+	}
+	   
+	
+    }//GEN-LAST:event_passFocusGained
 
     /**
      * @param args the command line arguments
