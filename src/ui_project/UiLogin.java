@@ -26,6 +26,7 @@ public class UiLogin extends javax.swing.JFrame {
     public UiLogin() {
         initComponents();
 	jPanel4.setFocusable(true);
+	setLocationRelativeTo(null);
     }
 
     /**
@@ -74,12 +75,13 @@ public class UiLogin extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(35, 43, 43));
         jLabel2.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(254, 255, 255));
         jLabel2.setText("Don't have an account?");
         jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, 23));
 
         user.setBackground(new java.awt.Color(35, 43, 43));
         user.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        user.setForeground(new java.awt.Color(204, 204, 204));
+        user.setForeground(new java.awt.Color(254, 255, 255));
         user.setText("username");
         user.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         user.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -102,7 +104,7 @@ public class UiLogin extends javax.swing.JFrame {
 
         pass.setBackground(new java.awt.Color(35, 43, 43));
         pass.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        pass.setForeground(new java.awt.Color(204, 204, 204));
+        pass.setForeground(new java.awt.Color(254, 255, 255));
         pass.setText("12345678");
         pass.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         pass.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -118,7 +120,7 @@ public class UiLogin extends javax.swing.JFrame {
         jPanel5.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 371, 36));
 
         button1.setActionCommand("Sing in");
-        button1.setBackground(new java.awt.Color(3, 57, 108));
+        button1.setBackground(new java.awt.Color(51, 51, 255));
         button1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         button1.setForeground(new java.awt.Color(255, 255, 255));
         button1.setLabel("Sign in");
@@ -137,7 +139,7 @@ public class UiLogin extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(35, 43, 43));
         jLabel4.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 91, 150));
+        jLabel4.setForeground(new java.awt.Color(51, 51, 255));
         jLabel4.setText("Register now!");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

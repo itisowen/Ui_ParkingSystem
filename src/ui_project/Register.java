@@ -102,8 +102,14 @@ public class Register extends javax.swing.JFrame {
 
         tf_user.setBackground(new java.awt.Color(35, 43, 43));
         tf_user.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        tf_user.setForeground(new java.awt.Color(254, 255, 255));
         tf_user.setText("username");
         tf_user.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tf_user.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tf_userFocusGained(evt);
+            }
+        });
         tf_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_userActionPerformed(evt);
@@ -119,8 +125,14 @@ public class Register extends javax.swing.JFrame {
 
         tf_pass.setBackground(new java.awt.Color(35, 43, 43));
         tf_pass.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        tf_pass.setText("jPasswordField1");
+        tf_pass.setForeground(new java.awt.Color(254, 255, 255));
+        tf_pass.setText("12345678910");
         tf_pass.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tf_pass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tf_passFocusGained(evt);
+            }
+        });
         tf_pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_passActionPerformed(evt);
@@ -129,7 +141,7 @@ public class Register extends javax.swing.JFrame {
         jPanel5.add(tf_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 371, 36));
 
         button1.setActionCommand("Sign up");
-        button1.setBackground(new java.awt.Color(3, 57, 108));
+        button1.setBackground(new java.awt.Color(51, 51, 255));
         button1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         button1.setForeground(new java.awt.Color(255, 255, 255));
         button1.setLabel("Sign up");
@@ -148,7 +160,7 @@ public class Register extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(35, 43, 43));
         jLabel4.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel4.setForeground(new java.awt.Color(51, 51, 255));
         jLabel4.setText("Sign in");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -159,8 +171,14 @@ public class Register extends javax.swing.JFrame {
 
         tf_repass.setBackground(new java.awt.Color(35, 43, 43));
         tf_repass.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        tf_repass.setText("jPasswordField1");
+        tf_repass.setForeground(new java.awt.Color(254, 255, 255));
+        tf_repass.setText("12345678910");
         tf_repass.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tf_repass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tf_repassFocusGained(evt);
+            }
+        });
         jPanel5.add(tf_repass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 371, 36));
 
         jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
@@ -174,8 +192,14 @@ public class Register extends javax.swing.JFrame {
 
         tf_fname.setBackground(new java.awt.Color(35, 43, 43));
         tf_fname.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        tf_fname.setForeground(new java.awt.Color(254, 255, 255));
         tf_fname.setText("Firstname");
         tf_fname.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tf_fname.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tf_fnameFocusGained(evt);
+            }
+        });
         tf_fname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_fnameActionPerformed(evt);
@@ -194,8 +218,14 @@ public class Register extends javax.swing.JFrame {
 
         tf_lastname.setBackground(new java.awt.Color(35, 43, 43));
         tf_lastname.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        tf_lastname.setForeground(new java.awt.Color(254, 255, 255));
         tf_lastname.setText("Lastname");
         tf_lastname.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tf_lastname.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tf_lastnameFocusGained(evt);
+            }
+        });
         tf_lastname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_lastnameActionPerformed(evt);
@@ -214,8 +244,14 @@ public class Register extends javax.swing.JFrame {
 
         tf_car.setBackground(new java.awt.Color(35, 43, 43));
         tf_car.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        tf_car.setForeground(new java.awt.Color(254, 255, 255));
         tf_car.setText("Car brand");
         tf_car.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tf_car.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tf_carFocusGained(evt);
+            }
+        });
         tf_car.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_carActionPerformed(evt);
@@ -234,8 +270,14 @@ public class Register extends javax.swing.JFrame {
 
         tf_license.setBackground(new java.awt.Color(35, 43, 43));
         tf_license.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        tf_license.setForeground(new java.awt.Color(254, 255, 255));
         tf_license.setText("License plate");
         tf_license.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tf_license.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tf_licenseFocusGained(evt);
+            }
+        });
         tf_license.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_licenseActionPerformed(evt);
@@ -254,8 +296,14 @@ public class Register extends javax.swing.JFrame {
 
         jTextField7.setBackground(new java.awt.Color(35, 43, 43));
         jTextField7.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(254, 255, 255));
         jTextField7.setText("Phone number");
         jTextField7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField7FocusGained(evt);
+            }
+        });
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
@@ -268,6 +316,7 @@ public class Register extends javax.swing.JFrame {
 
         jLabel9.setBackground(new java.awt.Color(35, 43, 43));
         jLabel9.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(254, 255, 255));
         jLabel9.setText("Already have an account?");
         jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, -1, 23));
 
@@ -286,6 +335,7 @@ public class Register extends javax.swing.JFrame {
         });
         jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 30, 30));
 
+        jLabel12.setBackground(new java.awt.Color(102, 102, 102));
         jLabel12.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jLabel12MouseDragged(evt);
@@ -415,6 +465,54 @@ public class Register extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void tf_fnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_fnameFocusGained
+       if(tf_fname.getText().equals("Firstname")){
+	    tf_fname.setText("");
+	}
+    }//GEN-LAST:event_tf_fnameFocusGained
+
+    private void tf_userFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_userFocusGained
+        if(tf_user.getText().equals("username")){
+	    tf_user.setText("");
+	}
+    }//GEN-LAST:event_tf_userFocusGained
+
+    private void tf_passFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_passFocusGained
+        if(tf_pass.getText().equals("12345678910")){
+	    tf_pass.setText("");
+	}
+    }//GEN-LAST:event_tf_passFocusGained
+
+    private void tf_repassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_repassFocusGained
+        if(tf_repass.getText().equals("12345678910")){
+	    tf_repass.setText("");
+	}
+    }//GEN-LAST:event_tf_repassFocusGained
+
+    private void tf_lastnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_lastnameFocusGained
+        if(tf_lastname.getText().equals("Lastname")){
+	    tf_lastname.setText("");
+	}
+    }//GEN-LAST:event_tf_lastnameFocusGained
+
+    private void tf_carFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_carFocusGained
+        if(tf_car.getText().equals("Car brand")){
+	    tf_car.setText("");
+	}
+    }//GEN-LAST:event_tf_carFocusGained
+
+    private void tf_licenseFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_licenseFocusGained
+        if(tf_license.getText().equals("License plate")){
+	    tf_license.setText("");
+	}
+    }//GEN-LAST:event_tf_licenseFocusGained
+
+    private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
+        if(jTextField7.getText().equals("Phone number")){
+	    jTextField7.setText("");
+	}
+    }//GEN-LAST:event_jTextField7FocusGained
 
     /**
      * @param args the command line arguments
