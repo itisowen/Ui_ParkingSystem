@@ -189,8 +189,7 @@ public class UiLogin extends javax.swing.JFrame {
             wela.pack();
             wela.setLocationRelativeTo(null);
             wela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            wela.jlabel1.setText("Welcome : "+ rs.getString("fname"));
-            wela.la_class.setText("Class : "+ rs.getString("memclass"));
+            
             
             this.dispose();
         }
