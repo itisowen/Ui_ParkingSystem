@@ -5,9 +5,12 @@
  */
 package ui_project;
 
+import com.sun.org.apache.bcel.internal.generic.Select;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JComboBox;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +23,8 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
+    ResultSet rs2 = null;
+    Object selected;
     
     public WelcomeAdmin() {
         initComponents();
@@ -38,6 +43,25 @@ public class WelcomeAdmin extends javax.swing.JFrame {
 	    c_user.addItem(user);
 	}
 	
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+    }
+    
+    public void UpdateForm(String user){
+	try{
+	    String sql = "SELECT * FROM `test` WHERE user = ? ";
+	    con = MyConnection.getConnection();
+	    pst = con.prepareStatement(sql);
+	    pst.setString(1, user);
+	    rs2 = pst.executeQuery();
+	    while((rs2!=null) && (rs2.next())){
+                t_first.setText(rs2.getString("fname"));
+                t_car.setText(rs2.getString("car"));
+                t_last.setText(rs2.getString("lname"));
+            }
+	    
+	    
 	}catch(Exception e){
 	    JOptionPane.showMessageDialog(null, e);
 	}
@@ -80,7 +104,12 @@ public class WelcomeAdmin extends javax.swing.JFrame {
 
         jLabel4.setText("Car");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Update");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -153,8 +182,28 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void c_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_userActionPerformed
-        // TODO add your handling code here:
+	JComboBox combo = (JComboBox) evt.getSource();
+	this.selected = combo.getSelectedItem();
+	UpdateForm((String) this.selected);
     }//GEN-LAST:event_c_userActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+	PreparedStatement ps = null;
+	try{
+	String sql = "UPDATE `test` SET fname = ?, lname = ?, car = ? WHERE user = ?";
+	ps = con.prepareStatement(sql);
+	ps.setString(1, t_first.getText());
+	ps.setString(2, t_last.getText());
+	ps.setString(3, t_car.getText());
+	ps.setString(4, (String) this.selected);
+	if(ps.executeUpdate() > 0){
+	    JOptionPane.showMessageDialog(null, "Update");
+	}
+	
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
