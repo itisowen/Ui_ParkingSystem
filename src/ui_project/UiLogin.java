@@ -166,10 +166,10 @@ public class UiLogin extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(14, 17, 17));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\itisowen_\\Desktop\\ProjectOop\\Ui_ParkingSystem\\image\\Car_96px.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/image/Car_96px.png"))); // NOI18N
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 40, 60));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\itisowen_\\Desktop\\ProjectOop\\Ui_ParkingSystem\\image\\Parking_96px.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/image/Parking_96px.png"))); // NOI18N
         jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 110, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 540));

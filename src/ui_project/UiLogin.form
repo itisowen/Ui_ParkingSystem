@@ -280,7 +280,7 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\itisowen_\Desktop\ProjectOop\Ui_ParkingSystem\image\Car_96px.png"/>
+              <Image iconType="3" name="/ui_project/image/Car_96px.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -292,7 +292,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\itisowen_\Desktop\ProjectOop\Ui_ParkingSystem\image\Parking_96px.png"/>
+              <Image iconType="3" name="/ui_project/image/Parking_96px.png"/>
             </Property>
           </Properties>
           <Constraints>
