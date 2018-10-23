@@ -49,6 +49,7 @@ public class UiLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -156,12 +157,20 @@ public class UiLogin extends javax.swing.JFrame {
         });
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel8.setText("X");
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, -1, -1));
+
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 470, 540));
 
         jPanel4.setBackground(new java.awt.Color(14, 17, 17));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 40, 60));
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 90, 80));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\itisowen_\\Desktop\\ProjectOop\\Ui_ParkingSystem\\image\\Car_96px.png")); // NOI18N
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 40, 60));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\itisowen_\\Desktop\\ProjectOop\\Ui_ParkingSystem\\image\\Parking_96px.png")); // NOI18N
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 110, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 540));
 
@@ -303,6 +312,7 @@ public class UiLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;

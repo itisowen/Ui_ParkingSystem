@@ -326,6 +326,7 @@ public class Register extends javax.swing.JFrame {
         jLabel10.setText("Confirm password");
         jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, 23));
 
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(254, 255, 255));
         jLabel11.setText("X");
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -333,7 +334,7 @@ public class Register extends javax.swing.JFrame {
                 jLabel11MouseClicked(evt);
             }
         });
-        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 30, 30));
+        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 0, 30, 30));
 
         jLabel12.setBackground(new java.awt.Color(102, 102, 102));
         jLabel12.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
