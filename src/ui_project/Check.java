@@ -24,7 +24,7 @@ public class Check {
 	Scanner input = new Scanner(System.in);
 	userr = input.next();
 	try{
-	    String sql = "SELECT * FROM `test` WHERE user=?";
+	    String sql = "SELECT * FROM `carlist` WHERE user=?";
 	    con = MyConnection.getConnection();
 	    pst = con.prepareStatement(sql);
 	    pst.setString(1, userr);

@@ -80,7 +80,7 @@ public class Register extends javax.swing.JFrame {
         tf_license = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        tf_phonenumber = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -294,22 +294,22 @@ public class Register extends javax.swing.JFrame {
         jLabel8.setText("Phone number");
         jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, -1, 23));
 
-        jTextField7.setBackground(new java.awt.Color(35, 43, 43));
-        jTextField7.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(254, 255, 255));
-        jTextField7.setText("Phone number");
-        jTextField7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
+        tf_phonenumber.setBackground(new java.awt.Color(35, 43, 43));
+        tf_phonenumber.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        tf_phonenumber.setForeground(new java.awt.Color(254, 255, 255));
+        tf_phonenumber.setText("Phone number");
+        tf_phonenumber.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tf_phonenumber.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField7FocusGained(evt);
+                tf_phonenumberFocusGained(evt);
             }
         });
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        tf_phonenumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                tf_phonenumberActionPerformed(evt);
             }
         });
-        jPanel5.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 371, 36));
+        jPanel5.add(tf_phonenumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 371, 36));
 
         jSeparator8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 420, 371, 10));
@@ -366,6 +366,7 @@ public class Register extends javax.swing.JFrame {
         String repass1 = String.valueOf(tf_repass.getPassword());
         String car1 = tf_car.getText();
         String license1 = tf_license.getText();
+	String phonenumber1 = tf_phonenumber.getText();
         
         if(fname1.equals("")){
             JOptionPane.showMessageDialog(null, "Please enter firstname");
@@ -385,13 +386,16 @@ public class Register extends javax.swing.JFrame {
         else if(license1.equals("")){
             JOptionPane.showMessageDialog(null, "Please enter car license");
         }
+	else if(phonenumber1.equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter phonenumber");
+        }
         else if(checkUser(user1) == true){
             JOptionPane.showMessageDialog(null, "This username is already exists");
         }
         else{
-        PreparedStatement ps;
+        PreparedStatement ps,ps2 = null;
         
-        String sql = "INSERT INTO `test`(`fname`, `lname`, `user`, `pass`, `car`, `license`, `isadmin`, `book`, `memclass`) VALUES (?,?,?,?,?,?,'0','0','sliver')";
+        String sql = "INSERT INTO `test`(`fname`, `lname`, `user`, `pass`, `phonenumber`, `memclass`) VALUES (?,?,?,?,?,'sliver')";
         try {
             ps = MyConnection.getConnection().prepareStatement(sql);
             
@@ -399,19 +403,25 @@ public class Register extends javax.swing.JFrame {
             ps.setString(2, lname1);
             ps.setString(3, user1);
             ps.setString(4, pass1);
-            ps.setString(5, car1);
-            ps.setString(6, license1);
-            
-            
-            if(ps.executeUpdate() > 0 ){
+	    ps.setString(5, phonenumber1);
+            if(ps.executeUpdate() > 0){
+		sql = "INSERT INTO `carlist`(`car`, `license`, `user`, `book`) VALUES (?,?,?,'0')";
+		ps2 = MyConnection.getConnection().prepareStatement(sql);
+		ps2.setString(1, car1);
+		ps2.setString(2, license1);
+		ps2.setString(3, user1);
+		if(ps2.executeUpdate() > 0 ){
+		
                 JOptionPane.showMessageDialog(null, "User add");
                 log.setVisible(true);
                 log.pack();
                 log.setLocationRelativeTo(null);
                 log.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        this.dispose();
+		this.dispose();
             }
+	    }
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,ex);
         }
@@ -434,9 +444,9 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_licenseActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void tf_phonenumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_phonenumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_tf_phonenumberActionPerformed
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         System.exit(0);
@@ -509,11 +519,11 @@ public class Register extends javax.swing.JFrame {
 	}
     }//GEN-LAST:event_tf_licenseFocusGained
 
-    private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
-        if(jTextField7.getText().equals("Phone number")){
-	    jTextField7.setText("");
+    private void tf_phonenumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_phonenumberFocusGained
+        if(tf_phonenumber.getText().equals("Phone number")){
+	    tf_phonenumber.setText("");
 	}
-    }//GEN-LAST:event_jTextField7FocusGained
+    }//GEN-LAST:event_tf_phonenumberFocusGained
 
     /**
      * @param args the command line arguments
@@ -573,12 +583,12 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField tf_car;
     private javax.swing.JTextField tf_fname;
     private javax.swing.JTextField tf_lastname;
     private javax.swing.JTextField tf_license;
     private javax.swing.JPasswordField tf_pass;
+    private javax.swing.JTextField tf_phonenumber;
     private javax.swing.JPasswordField tf_repass;
     private javax.swing.JTextField tf_user;
     // End of variables declaration//GEN-END:variables

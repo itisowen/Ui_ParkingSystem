@@ -154,6 +154,11 @@ public class WelcomeAdmin extends javax.swing.JFrame {
         });
 
         addcar.setText("ADD");
+        addcar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addcarActionPerformed(evt);
+            }
+        });
 
         car_com.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -325,6 +330,32 @@ public class WelcomeAdmin extends javax.swing.JFrame {
 	    JOptionPane.showMessageDialog(null, e);
 	}
     }//GEN-LAST:event_car_comActionPerformed
+
+    private void addcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addcarActionPerformed
+        if(!tc_add.getText().equals("")){
+	    try{
+	    String sql = "INSERT INTO `carlist`(`car`, `user`, `license`) VALUES (?, ?, ?)";
+	    con = MyConnection.getConnection();
+	    pst = con.prepareStatement(sql);
+	    pst.setString(1, tc_add.getText());
+	    pst.setString(3, tl_add.getText());
+	    pst.setString(2, (String) selected);
+	    
+	    if(pst.executeUpdate() > 0){
+		JOptionPane.showMessageDialog(null, "Add");
+		CarComboUpdate();
+		tc_add.setText("");
+		tl_add.setText("");
+	    }
+	    
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "error");
+	}
+    }//GEN-LAST:event_addcarActionPerformed
 
     public static void main(String args[]) {
 	
