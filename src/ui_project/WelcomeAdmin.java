@@ -22,10 +22,8 @@ public class WelcomeAdmin extends javax.swing.JFrame {
 	
     Connection con = null;
     PreparedStatement pst = null;
-    ResultSet rs = null;
-    ResultSet rs2 = null;
-    ResultSet rs3 = null;
-    Object selected;
+    ResultSet rs,rs2,rs3,rs4 = null;
+    Object selected, selected_car;
     
     public WelcomeAdmin() {
         initComponents();
@@ -63,7 +61,6 @@ public class WelcomeAdmin extends javax.swing.JFrame {
 	    String user = rs3.getString("car");
 	    car_com.addItem(user);
 	}
-	
 	}catch(Exception e){
 	    JOptionPane.showMessageDialog(null, e);
 	}
@@ -113,7 +110,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
         tc_add = new javax.swing.JTextField();
         tl_add = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        t_license = new javax.swing.JTextField();
         addcar = new javax.swing.JButton();
         car_com = new javax.swing.JComboBox<>();
 
@@ -150,15 +147,14 @@ public class WelcomeAdmin extends javax.swing.JFrame {
 
         jLabel8.setText("License");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        t_license.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                t_licenseActionPerformed(evt);
             }
         });
 
         addcar.setText("ADD");
 
-        car_com.setForeground(new java.awt.Color(254, 255, 255));
         car_com.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 car_comActionPerformed(evt);
@@ -197,7 +193,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(t_last, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                            .addComponent(jTextField3)
+                            .addComponent(t_license)
                             .addComponent(car_com, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -253,7 +249,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(t_license, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jButton1)
                 .addContainerGap(86, Short.MAX_VALUE))
@@ -286,54 +282,52 @@ public class WelcomeAdmin extends javax.swing.JFrame {
 	ps = con.prepareStatement(sql);
 	ps.setString(1, t_first.getText());
 	ps.setString(2, t_last.getText());
-//	ps.setString(3, t_car.getText());
 	ps.setString(3, (String) this.selected);
 	if(ps.executeUpdate() > 0){
 	    JOptionPane.showMessageDialog(null, "Update");
 	}
-	
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+	try{
+	    String sql = "UPDATE `carlist` SET `license`= ? WHERE `user` = ? AND `car` = ?";
+	    ps = con.prepareStatement(sql);
+	    ps.setString(1, t_license.getText());
+	    ps.setString(2, (String) this.selected);
+	    ps.setString(3, (String) this.selected_car);
+	    if(ps.executeUpdate() > 0){
+	    JOptionPane.showMessageDialog(null, "Update");
+	}
 	}catch(Exception e){
 	    JOptionPane.showMessageDialog(null, e);
 	}
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void t_licenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_licenseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_t_licenseActionPerformed
 
     private void car_comActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_car_comActionPerformed
-        
+	JComboBox combo = (JComboBox) evt.getSource();
+	this.selected_car = combo.getSelectedItem();
+	try{
+	    String sql = "SELECT * FROM `carlist` WHERE user = ? AND car = ?";
+	    con = MyConnection.getConnection();
+	    pst = con.prepareStatement(sql);
+	    pst.setString(1, (String) this.selected);
+	    pst.setString(2, (String) this.selected_car);
+	    rs4 = pst.executeQuery();
+	    while((rs4!=null) && (rs4.next())){
+		t_license.setText(rs4.getString("license"));
+            }
+	    
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
     }//GEN-LAST:event_car_comActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(WelcomeAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
+	
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new WelcomeAdmin().setVisible(true);
@@ -355,9 +349,9 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField t_first;
     private javax.swing.JTextField t_last;
+    private javax.swing.JTextField t_license;
     private javax.swing.JTextField tc_add;
     private javax.swing.JTextField tl_add;
     // End of variables declaration//GEN-END:variables
