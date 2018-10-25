@@ -216,7 +216,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(addcar)
                                 .addGap(50, 50, 50)))))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,7 +257,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
                     .addComponent(t_license, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jButton1)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(311, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -334,7 +334,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     private void addcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addcarActionPerformed
         if(!tc_add.getText().equals("")){
 	    try{
-	    String sql = "INSERT INTO `carlist`(`car`, `user`, `license`) VALUES (?, ?, ?)";
+	    String sql = "INSERT INTO `carlist`(`car`, `user`, `license`, `book`) VALUES (?, ?, ?, '0')";
 	    con = MyConnection.getConnection();
 	    pst = con.prepareStatement(sql);
 	    pst.setString(1, tc_add.getText());
