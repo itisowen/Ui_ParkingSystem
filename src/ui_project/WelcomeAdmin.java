@@ -9,7 +9,9 @@ import com.sun.org.apache.bcel.internal.generic.Select;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 
 import javax.swing.JOptionPane;
 
@@ -24,6 +26,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     PreparedStatement pst = null;
     ResultSet rs,rs2,rs3,rs4 = null;
     Object selected, selected_car;
+    private ImageIcon[] image = new ImageIcon[2];
     
     public WelcomeAdmin() {
         initComponents();
@@ -113,6 +116,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
         t_license = new javax.swing.JTextField();
         addcar = new javax.swing.JButton();
         car_com = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -166,15 +170,19 @@ public class WelcomeAdmin extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/2.png"))); // NOI18N
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -213,9 +221,15 @@ public class WelcomeAdmin extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(tl_add))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(188, 188, 188)
                                 .addComponent(addcar)
-                                .addGap(50, 50, 50)))))
+                                .addGap(50, 50, 50))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(jLabel9)))
                 .addContainerGap(131, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -257,7 +271,9 @@ public class WelcomeAdmin extends javax.swing.JFrame {
                     .addComponent(t_license, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jButton1)
-                .addContainerGap(311, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(159, 159, 159))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -356,6 +372,20 @@ public class WelcomeAdmin extends javax.swing.JFrame {
 	    JOptionPane.showMessageDialog(null, "error");
 	}
     }//GEN-LAST:event_addcarActionPerformed
+    
+    boolean count = false;
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+	image[0] = new ImageIcon(getClass().getResource("1.png"));
+	image[1] = new ImageIcon(getClass().getResource("2.png"));
+	if(!count){
+	    jLabel9.setIcon(image[0]);
+	    count = true;
+	}
+	else{
+	    jLabel9.setIcon(image[1]);
+	    count = false;
+	}
+    }//GEN-LAST:event_jLabel9MouseClicked
 
     public static void main(String args[]) {
 	
@@ -379,6 +409,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField t_first;
     private javax.swing.JTextField t_last;
