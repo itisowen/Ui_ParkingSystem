@@ -13,10 +13,6 @@ import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author itisowen_
- */
 public class UiLogin extends javax.swing.JFrame {
 
     Connection con = null;
