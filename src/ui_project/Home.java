@@ -7,12 +7,12 @@ package ui_project;
 
 /**
  *
- * @author itisowen_
+ * @author Owen
  */
 public class Home extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewAdmin
+     * Creates new form Home
      */
     public Home() {
         initComponents();
@@ -27,121 +27,75 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnl_home = new javax.swing.JPanel();
+        jPanel29 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        pnl_profile = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        bn_home = new javax.swing.JButton();
-        bn_profile = new javax.swing.JButton();
-        bn_exit = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
+        jPanel37 = new javax.swing.JPanel();
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 7, Short.MAX_VALUE)
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 211, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(890, 580));
+        setMinimumSize(new java.awt.Dimension(710, 580));
+        setPreferredSize(new java.awt.Dimension(710, 580));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnl_home.setBackground(new java.awt.Color(0, 0, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        jLabel1.setText("Home");
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        javax.swing.GroupLayout pnl_homeLayout = new javax.swing.GroupLayout(pnl_home);
-        pnl_home.setLayout(pnl_homeLayout);
-        pnl_homeLayout.setHorizontalGroup(
-            pnl_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_homeLayout.createSequentialGroup()
-                .addGap(270, 270, 270)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(295, Short.MAX_VALUE))
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Floor :");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(422, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(29, 29, 29)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
-        pnl_homeLayout.setVerticalGroup(
-            pnl_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_homeLayout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(259, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(pnl_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 710, 580));
-
-        pnl_profile.setBackground(new java.awt.Color(0, 221, 184));
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        jLabel2.setText("Profile");
-
-        javax.swing.GroupLayout pnl_profileLayout = new javax.swing.GroupLayout(pnl_profile);
-        pnl_profile.setLayout(pnl_profileLayout);
-        pnl_profileLayout.setHorizontalGroup(
-            pnl_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_profileLayout.createSequentialGroup()
-                .addGap(270, 270, 270)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(295, Short.MAX_VALUE))
-        );
-        pnl_profileLayout.setVerticalGroup(
-            pnl_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_profileLayout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(259, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        getContentPane().add(pnl_profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 710, 580));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 50));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 0));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel37.setBackground(new java.awt.Color(204, 255, 204));
 
-        bn_home.setText("Home");
-        bn_home.setBorder(null);
-        bn_home.setBorderPainted(false);
-        bn_home.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bn_homeActionPerformed(evt);
-            }
-        });
-        jPanel2.add(bn_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 180, 61));
+        javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
+        jPanel37.setLayout(jPanel37Layout);
+        jPanel37Layout.setHorizontalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+        );
+        jPanel37Layout.setVerticalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 550, Short.MAX_VALUE)
+        );
 
-        bn_profile.setText("Profile");
-        bn_profile.setBorder(null);
-        bn_profile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bn_profileActionPerformed(evt);
-            }
-        });
-        jPanel2.add(bn_profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 180, 61));
-
-        bn_exit.setText("Exit");
-        bn_exit.setBorder(null);
-        bn_exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bn_exitActionPerformed(evt);
-            }
-        });
-        jPanel2.add(bn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 180, 61));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 180, 10));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 580));
+        getContentPane().add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 710, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bn_exitActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_bn_exitActionPerformed
-
-    private void bn_profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bn_profileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bn_profileActionPerformed
-
-    private void bn_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bn_homeActionPerformed
-        if(!bn_home.isSelected()){
-            bn_home.setSelected(true);
-            bn_profile.setSelected(false);
-            
-            
-        }
-    }//GEN-LAST:event_bn_homeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,7 +123,6 @@ public class Home extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -180,14 +133,33 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bn_exit;
-    private javax.swing.JButton bn_home;
-    private javax.swing.JButton bn_profile;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JPanel pnl_home;
-    private javax.swing.JPanel pnl_profile;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel37;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }
