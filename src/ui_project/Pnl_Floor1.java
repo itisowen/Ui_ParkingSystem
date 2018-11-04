@@ -9,12 +9,17 @@ package ui_project;
  *
  * @author Owen
  */
-public class Floor2 extends javax.swing.JPanel {
-
+public class Pnl_Floor1 extends javax.swing.JPanel {
+    private Pnl_Booking pb;
     /**
      * Creates new form Floor1
      */
-    public Floor2() {
+    public Pnl_Floor1() {
+        initComponents();
+    }
+
+    Pnl_Floor1(Pnl_Booking pb) {
+        this.pb = pb;
         initComponents();
     }
 

@@ -5,17 +5,35 @@
  */
 package ui_project;
 
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Color;
+import javax.swing.JPanel;
+
 /**
  *
  * @author itisowen_
  */
 public class MainUser extends javax.swing.JFrame {
-
+    Pnl_Booking home;
+    Pnl_Profile profile;
     /**
      * Creates new form NewAdmin
      */
     public MainUser() {
         initComponents();
+        GridBagLayout layout = new GridBagLayout();
+        home = new Pnl_Booking(this);
+        profile = new Pnl_Profile(this);
+        multiPanel.setLayout(layout);
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        multiPanel.add(home, c);
+        multiPanel.add(profile, c);
+        home.setVisible(true);
+        profile.setVisible(false);
+
     }
 
     /**
@@ -27,112 +45,147 @@ public class MainUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnl_home = new javax.swing.JPanel();
-        pnl_profile = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        multiPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        bn_home = new javax.swing.JButton();
-        bn_profile = new javax.swing.JButton();
-        bn_exit = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        bn_Home = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        bn_Profile = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        bn_exit = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(890, 580));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnl_home.setBackground(new java.awt.Color(0, 0, 255));
-        pnl_home.setMinimumSize(new java.awt.Dimension(710, 580));
+        multiPanel.setBackground(new java.awt.Color(204, 204, 255));
+        multiPanel.setMinimumSize(new java.awt.Dimension(710, 580));
 
-        javax.swing.GroupLayout pnl_homeLayout = new javax.swing.GroupLayout(pnl_home);
-        pnl_home.setLayout(pnl_homeLayout);
-        pnl_homeLayout.setHorizontalGroup(
-            pnl_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout multiPanelLayout = new javax.swing.GroupLayout(multiPanel);
+        multiPanel.setLayout(multiPanelLayout);
+        multiPanelLayout.setHorizontalGroup(
+            multiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 710, Short.MAX_VALUE)
         );
-        pnl_homeLayout.setVerticalGroup(
-            pnl_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        multiPanelLayout.setVerticalGroup(
+            multiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 580, Short.MAX_VALUE)
         );
 
-        getContentPane().add(pnl_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 710, 580));
+        getContentPane().add(multiPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 710, 580));
 
-        pnl_profile.setBackground(new java.awt.Color(0, 221, 184));
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        jLabel2.setText("Profile");
-
-        javax.swing.GroupLayout pnl_profileLayout = new javax.swing.GroupLayout(pnl_profile);
-        pnl_profile.setLayout(pnl_profileLayout);
-        pnl_profileLayout.setHorizontalGroup(
-            pnl_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_profileLayout.createSequentialGroup()
-                .addGap(270, 270, 270)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(295, Short.MAX_VALUE))
-        );
-        pnl_profileLayout.setVerticalGroup(
-            pnl_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_profileLayout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(259, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(pnl_profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 710, 580));
-
-        jPanel2.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        bn_home.setText("Home");
-        bn_home.setBorder(null);
-        bn_home.setBorderPainted(false);
-        bn_home.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bn_homeActionPerformed(evt);
-            }
-        });
-        jPanel2.add(bn_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 180, 61));
-
-        bn_profile.setText("Profile");
-        bn_profile.setBorder(null);
-        bn_profile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bn_profileActionPerformed(evt);
-            }
-        });
-        jPanel2.add(bn_profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 180, 61));
-
-        bn_exit.setText("Exit");
-        bn_exit.setBorder(null);
-        bn_exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bn_exitActionPerformed(evt);
-            }
-        });
-        jPanel2.add(bn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 180, 61));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 180, 10));
+
+        bn_Home.setBackground(new java.awt.Color(255, 204, 204));
+        bn_Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_HomeMouseClicked(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setText("Booking");
+
+        javax.swing.GroupLayout bn_HomeLayout = new javax.swing.GroupLayout(bn_Home);
+        bn_Home.setLayout(bn_HomeLayout);
+        bn_HomeLayout.setHorizontalGroup(
+            bn_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bn_HomeLayout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(jLabel4)
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+        bn_HomeLayout.setVerticalGroup(
+            bn_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bn_HomeLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel4)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(bn_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 70));
+
+        bn_Profile.setBackground(new java.awt.Color(255, 204, 204));
+        bn_Profile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_ProfileMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setText("Profile");
+
+        javax.swing.GroupLayout bn_ProfileLayout = new javax.swing.GroupLayout(bn_Profile);
+        bn_Profile.setLayout(bn_ProfileLayout);
+        bn_ProfileLayout.setHorizontalGroup(
+            bn_ProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bn_ProfileLayout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(jLabel3)
+                .addContainerGap(73, Short.MAX_VALUE))
+        );
+        bn_ProfileLayout.setVerticalGroup(
+            bn_ProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bn_ProfileLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel3)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(bn_Profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 180, -1));
+
+        bn_exit.setBackground(new java.awt.Color(255, 204, 204));
+        bn_exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_exitMouseClicked(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setText("EXit");
+
+        javax.swing.GroupLayout bn_exitLayout = new javax.swing.GroupLayout(bn_exit);
+        bn_exit.setLayout(bn_exitLayout);
+        bn_exitLayout.setHorizontalGroup(
+            bn_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bn_exitLayout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(jLabel1)
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+        bn_exitLayout.setVerticalGroup(
+            bn_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_exitLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(25, 25, 25))
+        );
+
+        jPanel2.add(bn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 180, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bn_exitActionPerformed
+    private void bn_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_exitMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_bn_exitActionPerformed
+    }//GEN-LAST:event_bn_exitMouseClicked
 
-    private void bn_profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bn_profileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bn_profileActionPerformed
+    private void bn_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_HomeMouseClicked
+        home.setVisible(true);
+        profile.setVisible(false);
 
-    private void bn_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bn_homeActionPerformed
-        if(!bn_home.isSelected()){
-            bn_home.setSelected(true);
-            bn_profile.setSelected(false);
-            
-            
-        }
-    }//GEN-LAST:event_bn_homeActionPerformed
+    }//GEN-LAST:event_bn_HomeMouseClicked
+
+    private void bn_ProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_ProfileMouseClicked
+        home.setVisible(false);
+        profile.setVisible(true);
+
+    }//GEN-LAST:event_bn_ProfileMouseClicked
 
     /**
      * @param args the command line arguments
@@ -177,13 +230,15 @@ public class MainUser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bn_exit;
-    private javax.swing.JButton bn_home;
-    private javax.swing.JButton bn_profile;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel bn_Home;
+    private javax.swing.JPanel bn_Profile;
+    private javax.swing.JPanel bn_exit;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JPanel pnl_home;
-    private javax.swing.JPanel pnl_profile;
+    private javax.swing.JPanel multiPanel;
     // End of variables declaration//GEN-END:variables
+
 }
