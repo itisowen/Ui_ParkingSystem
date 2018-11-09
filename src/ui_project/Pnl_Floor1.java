@@ -17,7 +17,7 @@ public class Pnl_Floor1 extends javax.swing.JPanel {
 
     Pnl_Floor1(Pnl_Booking pb) {
 	ImageIcon test = new ImageIcon();
-	test = new ImageIcon(getClass().getResource("../car1.png"));
+	test = new ImageIcon(getClass().getResource("car1.png"));
 	jLabel1.setIcon(test);
 
         initComponents();
