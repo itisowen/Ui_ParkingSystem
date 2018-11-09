@@ -8,6 +8,10 @@ package ui_project;
 import javax.swing.JComboBox;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,13 +21,8 @@ public class Pnl_Booking extends javax.swing.JPanel {
     private MainUser mu;
     private Pnl_Floor1 pf1;
     private Pnl_Floor2 pf2;
-    private String f;
-    /**
-     * Creates new form Pnl_Home
-     */
-    public Pnl_Booking() {
-        initComponents();       
-    }
+    private String f, user;
+
 
     Pnl_Booking(MainUser mu) {
         this.mu = mu;
@@ -39,8 +38,18 @@ public class Pnl_Booking extends javax.swing.JPanel {
         divers.add(pf2, c);
         pf1.setVisible(true);
         pf2.setVisible(false);
+	this.user = mu.getUser();
+	System.out.println(user);
     }
 
+    public void CarComboUpdate(String usercar){
+	car_com.addItem(usercar);
+    }
+    
+    public void resetCarCombo(){
+	car_com.removeAllItems();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,7 +64,7 @@ public class Pnl_Booking extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         divers = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        car_com = new javax.swing.JComboBox<>();
 
         setMinimumSize(new java.awt.Dimension(710, 580));
 
@@ -88,7 +97,11 @@ public class Pnl_Booking extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Car :");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        car_com.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                car_comActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -98,7 +111,7 @@ public class Pnl_Booking extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(car_com, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(29, 29, 29)
@@ -114,7 +127,7 @@ public class Pnl_Booking extends javax.swing.JPanel {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(car_com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(divers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -149,11 +162,15 @@ public class Pnl_Booking extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void car_comActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_car_comActionPerformed
+
+    }//GEN-LAST:event_car_comActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> car_com;
     private javax.swing.JPanel divers;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

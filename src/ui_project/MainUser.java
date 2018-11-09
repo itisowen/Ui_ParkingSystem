@@ -8,6 +8,10 @@ package ui_project;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -17,11 +21,16 @@ import javax.swing.JPanel;
 public class MainUser extends javax.swing.JFrame {
     Pnl_Booking home;
     Pnl_Profile profile;
-    /**
-     * Creates new form NewAdmin
-     */
-    public MainUser() {
+    Pnl_Floor1 f1;
+    private String user;
+    private Connection con = null;
+    private PreparedStatement pst, ps = null;
+    private ResultSet rs_carlist, rs_form, rs_license, rs_floor1 = null;
+    
+    public MainUser(String user) {
         initComponents();
+	this.user = user;
+	System.out.println(this.user);
         GridBagLayout layout = new GridBagLayout();
         home = new Pnl_Booking(this);
         profile = new Pnl_Profile(this);
@@ -31,9 +40,212 @@ public class MainUser extends javax.swing.JFrame {
         c.gridy = 0;
         multiPanel.add(home, c);
         multiPanel.add(profile, c);
+	CarComboUpdate();
+	formSet();
         home.setVisible(true);
         profile.setVisible(false);
 
+    }
+    
+    public void CarComboUpdate(){
+	home.resetCarCombo();
+	try{
+	String sql = "SELECT * FROM `carlist` WHERE user = ?";
+	con = MyConnection.getConnection();
+	pst = con.prepareStatement(sql);
+	pst.setString(1, user);
+	rs_carlist = pst.executeQuery();
+	
+	while(rs_carlist.next()){
+	    String usercar = rs_carlist.getString("car");
+	    home.CarComboUpdate(usercar);
+	    profile.CarComboUpdate(usercar);
+	}
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+    }
+    
+    public void formSet(){
+	try{
+	    String sql = "SELECT * FROM `test` WHERE user = ? ";
+	    con = MyConnection.getConnection();
+	    pst = con.prepareStatement(sql);
+	    pst.setString(1, user);
+	    rs_form = pst.executeQuery();
+	    while((rs_form!=null) && (rs_form.next())){
+                profile.setName(rs_form.getString("fname"));
+                profile.setLname(rs_form.getString("lname"));
+		profile.setUser(user);
+		profile.setPhonenumber(rs_form.getString("phonenumber"));
+            }
+	    
+	    
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+	try{
+	    String sql = "SELECT * FROM `carlist` WHERE user = ? AND car = ?";
+	    con = MyConnection.getConnection();
+	    pst = con.prepareStatement(sql);
+	    pst.setString(1, this.user);
+	    pst.setString(2, profile.getCar());
+	    rs_license = pst.executeQuery();
+	    while((rs_license!=null) && (rs_license.next())){
+		profile.setLicense(rs_license.getString("license"));
+            }
+	    
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+    }
+    
+    public void formUpdate(){
+	try{
+	String sql = "UPDATE `test` SET fname = ?, lname = ?, phonenumber = ? WHERE user = ?";
+	ps = con.prepareStatement(sql);
+	ps.setString(1, profile.getFname());
+	ps.setString(2, profile.getLname());
+	ps.setString(3, profile.getPhonenumber());
+	ps.setString(4, this.user);
+	if(ps.executeUpdate() > 0){
+	    JOptionPane.showMessageDialog(null, "Update");
+	}
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+	try{
+	    String sql = "UPDATE `carlist` SET `license`= ? WHERE `user` = ? AND `car` = ?";
+	    ps = con.prepareStatement(sql);
+	    ps.setString(1, profile.getLicense());
+	    ps.setString(2, this.user);
+	    ps.setString(3, profile.getCar());
+	    if(ps.executeUpdate() > 0){
+	    JOptionPane.showMessageDialog(null, "Update");
+	}
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+    }
+    
+    public void checkFloor1(){
+	int ava = 0;
+//	for(int i=1; i<=10; i++){
+//	    try{
+//	    String sql = "SELECT * FROM `floor1` WHERE  slot = ?";
+//		con = MyConnection.getConnection();
+//		pst = con.prepareStatement(sql);
+//		pst.setInt(1, i);
+//		rs_floor1 = pst.executeQuery();
+//		while((rs_floor1!=null) && (rs_floor1.next())){
+//		    ava = rs_floor1.getInt("availble");
+//		}
+//	    }catch(Exception e){
+//		JOptionPane.showMessageDialog(null, e);
+//	    }
+//	    switch(i) {
+//		    case 1 :
+//			f1.setS1(ava);
+//			break;
+//		    case 2 :
+//			if(ava == 1){
+//			    
+//			}
+//			else{
+//			    
+//			}
+//			break;
+//		    case 3 :
+//			if(ava == 1){
+//			    
+//			}
+//			else{
+//			    
+//			}
+//			break;
+//		    case 4 :
+//			if(ava == 1){
+//			    
+//			}
+//			else{
+//			    
+//			}
+//			break;
+//		    case 5 :
+//			if(ava == 1){
+//			    
+//			}
+//			else{
+//			    
+//			}
+//			break;
+//		    case 6 :
+//			if(ava == 1){
+//			    
+//			}
+//			else{
+//			    
+//			}
+//			break;
+//		    case 7 :
+//			if(ava == 1){
+//			    
+//			}
+//			else{
+//			    
+//			}
+//			break;
+//		    case 8 :
+//			if(ava == 1){
+//			    
+//			}
+//			else{
+//			    
+//			}
+//			break;
+//		    case 9:
+//			if(ava == 1){
+//			    
+//			}
+//			else{
+//			    
+//			}
+//			break;
+//		    case 10:
+//			if(ava == 1){
+//			    
+//			}
+//			else{
+//			    
+//			}
+//			break;
+//		}
+//	    rs_floor1 = null;
+//	    pst = null;
+//	    con = null;
+//	}
+	
+    }
+    
+    public String getUser() {
+	return user;
+    }
+    
+    public void formSetLicense(){
+	try{
+	    String sql = "SELECT * FROM `carlist` WHERE user = ? AND car = ?";
+	    con = MyConnection.getConnection();
+	    pst = con.prepareStatement(sql);
+	    pst.setString(1, this.user);
+	    pst.setString(2, profile.getCar());
+	    rs_license = pst.executeQuery();
+	    while((rs_license!=null) && (rs_license.next())){
+		profile.setLicense(rs_license.getString("license"));
+            }
+	    
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
     }
 
     /**
@@ -176,7 +388,8 @@ public class MainUser extends javax.swing.JFrame {
     }//GEN-LAST:event_bn_exitMouseClicked
 
     private void bn_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_HomeMouseClicked
-        home.setVisible(true);
+        checkFloor1();
+	home.setVisible(true);
         profile.setVisible(false);
 
     }//GEN-LAST:event_bn_HomeMouseClicked
@@ -190,7 +403,7 @@ public class MainUser extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String user) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -224,7 +437,7 @@ public class MainUser extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainUser().setVisible(true);
+                new MainUser(user).setVisible(true);
             }
         });
     }

@@ -170,7 +170,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/2.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked(evt);
@@ -271,7 +271,7 @@ public class WelcomeAdmin extends javax.swing.JFrame {
                     .addComponent(t_license, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addGap(159, 159, 159))
         );
@@ -375,8 +375,8 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     
     boolean count = false;
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-	image[0] = new ImageIcon(getClass().getResource("1.png"));
-	image[1] = new ImageIcon(getClass().getResource("2.png"));
+	image[0] = new ImageIcon(getClass().getResource("car1.png"));
+	image[1] = new ImageIcon(getClass().getResource("car2.png"));
 	if(!count){
 	    jLabel9.setIcon(image[0]);
 	    count = true;

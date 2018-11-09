@@ -210,13 +210,11 @@ public class UiLogin extends javax.swing.JFrame {
             this.dispose();
         }
         else{
-            Welcome wel = new Welcome();
-            wel.setVisible(true);
-            wel.pack();
-            wel.setLocationRelativeTo(null);
-            wel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            wel.jlabel1.setText("Welcome : "+ rs.getString("fname"));
-            wel.la_class.setText("Class : "+ rs.getString("memclass"));
+            MainUser mainUser = new MainUser(user.getText());
+            mainUser.setVisible(true);
+            mainUser.pack();
+            mainUser.setLocationRelativeTo(null);
+            mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
             this.dispose();
         }
