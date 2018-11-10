@@ -41,7 +41,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 	this.user = mu.getUser();
 	System.out.println(user);
     }
-
+    
+    public void check(){
+	pf1.checkFloor1();
+    }
+    
+    
     public void CarComboUpdate(String usercar){
 	car_com.addItem(usercar);
     }

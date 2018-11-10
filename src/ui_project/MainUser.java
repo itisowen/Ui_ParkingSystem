@@ -25,7 +25,7 @@ public class MainUser extends javax.swing.JFrame {
     private String user;
     private Connection con = null;
     private PreparedStatement pst, ps = null;
-    private ResultSet rs_carlist, rs_form, rs_license, rs_floor1 = null;
+    private ResultSet rs_carlist, rs_form, rs_license = null;
     
     public MainUser(String user) {
         initComponents();
@@ -128,104 +128,6 @@ public class MainUser extends javax.swing.JFrame {
 	}
     }
     
-    public void checkFloor1(){
-	int ava = 0;
-//	for(int i=1; i<=10; i++){
-//	    try{
-//	    String sql = "SELECT * FROM `floor1` WHERE  slot = ?";
-//		con = MyConnection.getConnection();
-//		pst = con.prepareStatement(sql);
-//		pst.setInt(1, i);
-//		rs_floor1 = pst.executeQuery();
-//		while((rs_floor1!=null) && (rs_floor1.next())){
-//		    ava = rs_floor1.getInt("availble");
-//		}
-//	    }catch(Exception e){
-//		JOptionPane.showMessageDialog(null, e);
-//	    }
-//	    switch(i) {
-//		    case 1 :
-//			f1.setS1(ava);
-//			break;
-//		    case 2 :
-//			if(ava == 1){
-//			    
-//			}
-//			else{
-//			    
-//			}
-//			break;
-//		    case 3 :
-//			if(ava == 1){
-//			    
-//			}
-//			else{
-//			    
-//			}
-//			break;
-//		    case 4 :
-//			if(ava == 1){
-//			    
-//			}
-//			else{
-//			    
-//			}
-//			break;
-//		    case 5 :
-//			if(ava == 1){
-//			    
-//			}
-//			else{
-//			    
-//			}
-//			break;
-//		    case 6 :
-//			if(ava == 1){
-//			    
-//			}
-//			else{
-//			    
-//			}
-//			break;
-//		    case 7 :
-//			if(ava == 1){
-//			    
-//			}
-//			else{
-//			    
-//			}
-//			break;
-//		    case 8 :
-//			if(ava == 1){
-//			    
-//			}
-//			else{
-//			    
-//			}
-//			break;
-//		    case 9:
-//			if(ava == 1){
-//			    
-//			}
-//			else{
-//			    
-//			}
-//			break;
-//		    case 10:
-//			if(ava == 1){
-//			    
-//			}
-//			else{
-//			    
-//			}
-//			break;
-//		}
-//	    rs_floor1 = null;
-//	    pst = null;
-//	    con = null;
-//	}
-	
-    }
     
     public String getUser() {
 	return user;
@@ -388,9 +290,10 @@ public class MainUser extends javax.swing.JFrame {
     }//GEN-LAST:event_bn_exitMouseClicked
 
     private void bn_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_HomeMouseClicked
-        checkFloor1();
+
 	home.setVisible(true);
         profile.setVisible(false);
+	home.check();
 
     }//GEN-LAST:event_bn_HomeMouseClicked
 

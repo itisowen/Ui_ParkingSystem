@@ -375,8 +375,8 @@ public class WelcomeAdmin extends javax.swing.JFrame {
     
     boolean count = false;
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-	image[0] = new ImageIcon(getClass().getResource("car1.png"));
-	image[1] = new ImageIcon(getClass().getResource("car2.png"));
+	image[0] = new ImageIcon(getClass().getResource("/Image/1.png"));
+	image[1] = new ImageIcon(getClass().getResource("/Image/2.png"));
 	if(!count){
 	    jLabel9.setIcon(image[0]);
 	    count = true;
