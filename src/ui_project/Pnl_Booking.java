@@ -21,15 +21,18 @@ public class Pnl_Booking extends javax.swing.JPanel {
     private MainUser mu;
     private Pnl_Floor1 pf1;
     private Pnl_Floor2 pf2;
-    private String f, user;
+    private String f, user, fname, lname;
+    Object selected_car;
 
 
     Pnl_Booking(MainUser mu) {
         this.mu = mu;
+	this.user = mu.getUser();
         initComponents();
         GridBagLayout layout = new GridBagLayout();
-        pf1 = new Pnl_Floor1(this);
+        pf1 = new Pnl_Floor1(this, user);
         pf2 = new Pnl_Floor2(this);
+	System.out.println(user);
         divers.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -38,15 +41,29 @@ public class Pnl_Booking extends javax.swing.JPanel {
         divers.add(pf2, c);
         pf1.setVisible(true);
         pf2.setVisible(false);
-	this.user = mu.getUser();
-	System.out.println(user);
+	setName();
+    }
+    
+    public void setName(){
+	try{
+	    String sql = "SELECT * FROM `test` WHERE user = ? ";
+	    Connection con = MyConnection.getConnection();
+	    PreparedStatement pst = con.prepareStatement(sql);
+	    pst.setString(1, user);
+	    ResultSet rs_form = pst.executeQuery();
+	    rs_form.next();
+	    pf1.setFname(rs_form.getString("fname"));
+	    pf1.setLname(rs_form.getString("lname"));
+	    
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
     }
     
     public void check(){
 	pf1.checkFloor1();
     }
-    
-    
+
     public void CarComboUpdate(String usercar){
 	car_com.addItem(usercar);
     }
@@ -55,6 +72,7 @@ public class Pnl_Booking extends javax.swing.JPanel {
 	car_com.removeAllItems();
     }
     
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -168,7 +186,9 @@ public class Pnl_Booking extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void car_comActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_car_comActionPerformed
-
+	JComboBox combo = (JComboBox) evt.getSource();
+	this.selected_car = combo.getSelectedItem();
+	pf1.setCar(selected_car+"");
     }//GEN-LAST:event_car_comActionPerformed
 
 

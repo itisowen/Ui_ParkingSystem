@@ -348,6 +348,9 @@
               <Image iconType="3" name="/ui_project/car1.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s5MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="s3">
           <Properties>
@@ -355,6 +358,9 @@
               <Image iconType="3" name="/ui_project/car1.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s3MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="s2">
           <Properties>
@@ -362,6 +368,9 @@
               <Image iconType="3" name="/ui_project/car1.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s2MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="s10">
           <Properties>
@@ -369,6 +378,9 @@
               <Image iconType="3" name="/ui_project/car1.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s10MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="s9">
           <Properties>
@@ -376,6 +388,9 @@
               <Image iconType="3" name="/ui_project/car1.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s9MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="s8">
           <Properties>
@@ -383,6 +398,9 @@
               <Image iconType="3" name="/ui_project/car1.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s8MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="s7">
           <Properties>
@@ -390,6 +408,9 @@
               <Image iconType="3" name="/ui_project/car1.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s7MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="s6">
           <Properties>
@@ -397,6 +418,9 @@
               <Image iconType="3" name="/ui_project/car1.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s6MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="s4">
           <Properties>
@@ -404,6 +428,9 @@
               <Image iconType="3" name="/ui_project/car1.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s4MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="s1">
           <Properties>
@@ -412,6 +439,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="s1MouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

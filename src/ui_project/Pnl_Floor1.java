@@ -6,6 +6,7 @@
 package ui_project;
 
 
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,20 +16,55 @@ import javax.swing.JOptionPane;
 
 public class Pnl_Floor1 extends javax.swing.JPanel {
     
+    private MainUser mu;
     private Pnl_Booking pb;
+    private Pnl_Profile pn;
+    private String fname, lname, license, car, user;
     private Connection con = null;
     private PreparedStatement pst = null;
     private ResultSet rs_floor1 = null;
     private ImageIcon[] image = new ImageIcon[2];
+    private int[] slot = new int[11];
 
-    Pnl_Floor1(Pnl_Booking pb) {
+    Pnl_Floor1(Pnl_Booking pb, String user) {
         initComponents();
 	image[0] = new ImageIcon(getClass().getResource("car1.png"));
 	image[1] = new ImageIcon(getClass().getResource("car2.png"));
 	checkFloor1();
+	this.user = user;
+
 
     }
+
+    public void setCar(String car){
+	this.car = car;
+	System.out.println(this.car);
+    }
     
+    public String getFname() {
+	return fname;
+    }
+
+    public void setFname(String fname) {
+	this.fname = fname;
+    }
+
+    public String getLname() {
+	return lname;
+    }
+
+    public void setLname(String lname) {
+	this.lname = lname;
+    }
+
+    public String getLicense() {
+	return license;
+    }
+
+    public void setLicense(String license) {
+	this.license = license;
+    }
+
     
     
     public void checkFloor1(){
@@ -50,81 +86,101 @@ public class Pnl_Floor1 extends javax.swing.JPanel {
 		    case 1 :
 			if(ava == 0){
 			    s1.setIcon(image[1]);
+			    slot[1] = 0;
 			}
 			else{
 			    s1.setIcon(image[0]);
+			    slot[1] = 1;
 			}
 			break;
 		    case 2 :
 			if(ava == 0){
 			    s2.setIcon(image[1]);
+			    slot[2] = 0;
 			}
 			else{
 			    s2.setIcon(image[0]);
+			    slot[2] = 1;
 			}
 			break;
 		    case 3 :
 			if(ava == 0){
 			    s3.setIcon(image[1]);
+			    slot[3] = 0;
 			}
 			else{
 			    s3.setIcon(image[0]);
+			    slot[3] = 1;
 			}
 			break;
 		    case 4 :
 			if(ava == 0){
 			    s4.setIcon(image[1]);
+			    slot[4] = 0;
 			}
 			else{
 			    s4.setIcon(image[0]);
+			    slot[4] = 1;
 			}
 			break;
 		    case 5 :
 			if(ava == 0){
 			    s5.setIcon(image[1]);
+			    slot[5] = 0;
 			}
 			else{
 			    s5.setIcon(image[0]);
+			    slot[5] = 1;
 			}
 			break;
 		    case 6 :
 			if(ava == 0){
 			    s6.setIcon(image[1]);
+			    slot[6] = 0;
 			}
 			else{
 			    s6.setIcon(image[0]);
+			    slot[6] = 1;
 			}
 			break;
 		    case 7 :
 			if(ava == 0){
 			    s7.setIcon(image[1]);
+			    slot[7] = 0;
 			}
 			else{
 			    s7.setIcon(image[0]);
+			    slot[7] = 1;
 			}
 			break;
 		    case 8 :
 			if(ava == 0){
 			    s8.setIcon(image[1]);
+			    slot[8] = 0;
 			}
 			else{
 			    s8.setIcon(image[0]);
+			    slot[8] = 1;
 			}
 			break;
 		    case 9:
 			if(ava == 0){
 			    s9.setIcon(image[1]);
+			    slot[9] = 0;
 			}
 			else{
 			    s9.setIcon(image[0]);
+			    slot[9] = 1;
 			}
 			break;
 		    case 10:
 			if(ava == 0){
 			    s10.setIcon(image[1]);
+			    slot[10] = 0;
 			}
 			else{
 			    s10.setIcon(image[0]);
+			    slot[10] = 1;
 			}
 			break;
 		}
@@ -136,6 +192,57 @@ public class Pnl_Floor1 extends javax.swing.JPanel {
 	
     }
 
+    public void bookSlotF1(String slot){
+	System.out.println(this.user);
+	System.out.println(this.fname);
+	System.out.println(this.lname);
+	System.out.println(formGetLicense(this.car));
+	try{
+	    String sql2 = "UPDATE `floor1` SET  user = ?, fname = ?, lname = ?, car = ?, license = ?, availble = 1 WHERE slot = ?";
+	    PreparedStatement ps = con.prepareStatement(sql2);
+	    ps.setString(1, this.user);
+	    ps.setString(2, this.fname);
+	    ps.setString(3, this.lname);
+	    ps.setString(4, this.car);
+	    ps.setString(5,formGetLicense(this.car));
+	    ps.setString(6, slot);
+	    
+	if(ps.executeUpdate() > 0){
+	    try{
+		String sql3 = "UPDATE `carlist` SET  book = '1' WHERE license = ?";
+		PreparedStatement ps2 = con.prepareStatement(sql3);
+		ps2.setString(1, formGetLicense(this.car));
+		ps2.executeUpdate();
+	    }catch(Exception ex){
+		System.out.println(ex);
+	    }
+	    JOptionPane.showMessageDialog(null, "Booked");
+	}
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, "test");
+	}
+	checkFloor1();
+    }
+    
+    public String formGetLicense(String car){
+	String li = "test";
+	try{
+	    String sql = "SELECT * FROM `carlist` WHERE user = ? AND car = ?";
+	    con = MyConnection.getConnection();
+	    pst = con.prepareStatement(sql);
+	    pst.setString(1, this.user);
+	    pst.setString(2, car);
+	    ResultSet rs_license = pst.executeQuery();
+	    while((rs_license!=null) && (rs_license.next())){
+		li = rs_license.getString("license");
+            }
+	    
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+	return li;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -299,25 +406,75 @@ public class Pnl_Floor1 extends javax.swing.JPanel {
         );
 
         s5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
+        s5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s5MouseClicked(evt);
+            }
+        });
 
         s3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
+        s3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s3MouseClicked(evt);
+            }
+        });
 
         s2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
+        s2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s2MouseClicked(evt);
+            }
+        });
 
         s10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
+        s10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s10MouseClicked(evt);
+            }
+        });
 
         s9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
+        s9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s9MouseClicked(evt);
+            }
+        });
 
         s8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
+        s8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s8MouseClicked(evt);
+            }
+        });
 
         s7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
+        s7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s7MouseClicked(evt);
+            }
+        });
 
         s6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
+        s6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s6MouseClicked(evt);
+            }
+        });
 
         s4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
+        s4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s4MouseClicked(evt);
+            }
+        });
 
         s1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_project/car1.png"))); // NOI18N
         s1.setText("jLabel1");
+        s1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -423,6 +580,186 @@ public class Pnl_Floor1 extends javax.swing.JPanel {
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 562, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void s1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s1MouseClicked
+        if(slot[1] == 0){
+	    int option = JOptionPane.showConfirmDialog(null, "Do you want to book this slot?");
+	    if(option == 0){
+		bookSlotF1("1");
+	    }
+	    else if(option == 1){
+		
+	    }
+	    else{
+		
+	    }
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "This slot not availble");
+	}
+    }//GEN-LAST:event_s1MouseClicked
+
+    private void s2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s2MouseClicked
+        if(slot[2] == 0){
+	    int option = JOptionPane.showConfirmDialog(null, "Do you want to book this slot?");
+	    if(option == 0){
+		bookSlotF1("2");
+	    }
+	    else if(option == 1){
+		
+	    }
+	    else{
+		
+	    }
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "This slot not availble");
+	}
+    }//GEN-LAST:event_s2MouseClicked
+
+    private void s3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s3MouseClicked
+        if(slot[3] == 0){
+	    int option = JOptionPane.showConfirmDialog(null, "Do you want to book this slot?");
+	    if(option == 0){
+		bookSlotF1("3");
+	    }
+	    else if(option == 1){
+		
+	    }
+	    else{
+		
+	    }
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "This slot not availble");
+	}
+    }//GEN-LAST:event_s3MouseClicked
+
+    private void s4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s4MouseClicked
+        if(slot[4] == 0){
+	    int option = JOptionPane.showConfirmDialog(null, "Do you want to book this slot?");
+	    if(option == 0){
+		bookSlotF1("4");
+	    }
+	    else if(option == 1){
+		
+	    }
+	    else{
+		
+	    }
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "This slot not availble");
+	}
+    }//GEN-LAST:event_s4MouseClicked
+
+    private void s5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s5MouseClicked
+        if(slot[5] == 0){
+	    int option = JOptionPane.showConfirmDialog(null, "Do you want to book this slot?");
+	    if(option == 0){
+		bookSlotF1("5");
+	    }
+	    else if(option == 1){
+		
+	    }
+	    else{
+		
+	    }
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "This slot not availble");
+	}
+    }//GEN-LAST:event_s5MouseClicked
+
+    private void s6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s6MouseClicked
+        if(slot[6] == 0){
+	    int option = JOptionPane.showConfirmDialog(null, "Do you want to book this slot?");
+	    if(option == 0){
+		bookSlotF1("6");
+	    }
+	    else if(option == 1){
+		
+	    }
+	    else{
+		
+	    }
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "This slot not availble");
+	}
+    }//GEN-LAST:event_s6MouseClicked
+
+    private void s7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s7MouseClicked
+        if(slot[7] == 0){
+	    int option = JOptionPane.showConfirmDialog(null, "Do you want to book this slot?");
+	    if(option == 0){
+		bookSlotF1("7");
+	    }
+	    else if(option == 1){
+		
+	    }
+	    else{
+		
+	    }
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "This slot not availble");
+	}
+    }//GEN-LAST:event_s7MouseClicked
+
+    private void s8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s8MouseClicked
+        if(slot[8] == 0){
+	    int option = JOptionPane.showConfirmDialog(null, "Do you want to book this slot?");
+	    if(option == 0){
+		bookSlotF1("8");
+	    }
+	    else if(option == 1){
+		
+	    }
+	    else{
+		
+	    }
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "This slot not availble");
+	}
+    }//GEN-LAST:event_s8MouseClicked
+
+    private void s9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s9MouseClicked
+        if(slot[9] == 0){
+	    int option = JOptionPane.showConfirmDialog(null, "Do you want to book this slot?");
+	    if(option == 0){
+		bookSlotF1("9");
+	    }
+	    else if(option == 1){
+		
+	    }
+	    else{
+		
+	    }
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "This slot not availble");
+	}
+    }//GEN-LAST:event_s9MouseClicked
+
+    private void s10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s10MouseClicked
+        if(slot[10] == 0){
+	    int option = JOptionPane.showConfirmDialog(null, "Do you want to book this slot?");
+	    if(option == 0){
+		bookSlotF1("10");
+	    }
+	    else if(option == 1){
+		
+	    }
+	    else{
+		
+	    }
+	}
+	else{
+	    JOptionPane.showMessageDialog(null, "This slot not availble");
+	}
+    }//GEN-LAST:event_s10MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

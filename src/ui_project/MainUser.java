@@ -41,6 +41,7 @@ public class MainUser extends javax.swing.JFrame {
         multiPanel.add(home, c);
         multiPanel.add(profile, c);
 	CarComboUpdate();
+	CarComboUpdateBook();
 	formSet();
         home.setVisible(true);
         profile.setVisible(false);
@@ -58,13 +59,33 @@ public class MainUser extends javax.swing.JFrame {
 	
 	while(rs_carlist.next()){
 	    String usercar = rs_carlist.getString("car");
-	    home.CarComboUpdate(usercar);
+//	    home.CarComboUpdate(usercar);
 	    profile.CarComboUpdate(usercar);
 	}
 	}catch(Exception e){
 	    JOptionPane.showMessageDialog(null, e);
 	}
     }
+    
+    public void CarComboUpdateBook(){
+	home.resetCarCombo();
+	try{
+	String sql = "SELECT * FROM `carlist` WHERE user = ? AND book = '0'";
+	con = MyConnection.getConnection();
+	pst = con.prepareStatement(sql);
+	pst.setString(1, user);
+	rs_carlist = pst.executeQuery();
+	
+	while(rs_carlist.next()){
+	    String usercar = rs_carlist.getString("car");
+	    home.CarComboUpdate(usercar);
+	}
+	
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+    }
+    
     
     public void formSet(){
 	try{
@@ -149,6 +170,7 @@ public class MainUser extends javax.swing.JFrame {
 	    JOptionPane.showMessageDialog(null, e);
 	}
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -290,7 +312,8 @@ public class MainUser extends javax.swing.JFrame {
     }//GEN-LAST:event_bn_exitMouseClicked
 
     private void bn_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_HomeMouseClicked
-
+	home.resetCarCombo();
+	CarComboUpdateBook();
 	home.setVisible(true);
         profile.setVisible(false);
 	home.check();

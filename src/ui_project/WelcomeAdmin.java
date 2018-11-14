@@ -136,6 +136,12 @@ public class WelcomeAdmin extends javax.swing.JFrame {
 
         jLabel4.setText("Car");
 
+        t_first.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t_firstActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("Update");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -386,6 +392,10 @@ public class WelcomeAdmin extends javax.swing.JFrame {
 	    count = false;
 	}
     }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void t_firstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_firstActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t_firstActionPerformed
 
     public static void main(String args[]) {
 	
