@@ -22,14 +22,22 @@ public class MainUser extends javax.swing.JFrame {
     Pnl_Booking home;
     Pnl_Profile profile;
     Pnl_Floor1 f1;
-    private String user;
+    private String user, isAdmin;
+    private String bn_homec = "0", bn_profilec = "0", bn_checkoutc = "0", bn_addcarc = "0";
     private Connection con = null;
     private PreparedStatement pst, ps = null;
     private ResultSet rs_carlist, rs_form, rs_license = null;
     
-    public MainUser(String user) {
+    public MainUser(String user, String isAdmin) {
         initComponents();
 	this.user = user;
+	this.isAdmin = isAdmin;
+	if(this.isAdmin == "admin"){
+	    bn_checkout.setVisible(true);
+	}
+	else{
+	    bn_checkout.setVisible(false);
+	}
 	System.out.println(this.user);
         GridBagLayout layout = new GridBagLayout();
         home = new Pnl_Booking(this);
@@ -46,6 +54,9 @@ public class MainUser extends javax.swing.JFrame {
         home.setVisible(true);
         profile.setVisible(false);
 
+    }
+
+    private MainUser(String user) {
     }
     
     public void CarComboUpdate(){
@@ -189,6 +200,10 @@ public class MainUser extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         bn_exit = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        bn_checkout = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        bn_addcar = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(890, 580));
@@ -304,19 +319,93 @@ public class MainUser extends javax.swing.JFrame {
         bn_exitLayout.setHorizontalGroup(
             bn_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_exitLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(61, 61, 61)
                 .addComponent(jLabel1)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         bn_exitLayout.setVerticalGroup(
             bn_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_exitLayout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26))
+                .addGap(25, 25, 25))
         );
 
-        jPanel2.add(bn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 180, -1));
+        jPanel2.add(bn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 180, -1));
+
+        bn_checkout.setBackground(new java.awt.Color(62, 16, 136));
+        bn_checkout.setForeground(new java.awt.Color(104, 26, 228));
+        bn_checkout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_checkoutMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bn_checkoutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bn_checkoutMouseExited(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 254));
+        jLabel5.setText("Check Out");
+
+        javax.swing.GroupLayout bn_checkoutLayout = new javax.swing.GroupLayout(bn_checkout);
+        bn_checkout.setLayout(bn_checkoutLayout);
+        bn_checkoutLayout.setHorizontalGroup(
+            bn_checkoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_checkoutLayout.createSequentialGroup()
+                .addContainerGap(29, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(25, 25, 25))
+        );
+        bn_checkoutLayout.setVerticalGroup(
+            bn_checkoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bn_checkoutLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel5)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(bn_checkout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 180, -1));
+
+        bn_addcar.setBackground(new java.awt.Color(62, 16, 136));
+        bn_addcar.setForeground(new java.awt.Color(104, 26, 228));
+        bn_addcar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_addcarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bn_addcarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bn_addcarMouseExited(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 254));
+        jLabel6.setText("Add Car");
+
+        javax.swing.GroupLayout bn_addcarLayout = new javax.swing.GroupLayout(bn_addcar);
+        bn_addcar.setLayout(bn_addcarLayout);
+        bn_addcarLayout.setHorizontalGroup(
+            bn_addcarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_addcarLayout.createSequentialGroup()
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(40, 40, 40))
+        );
+        bn_addcarLayout.setVerticalGroup(
+            bn_addcarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bn_addcarLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel6)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(bn_addcar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 180, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 580));
 
@@ -333,12 +422,28 @@ public class MainUser extends javax.swing.JFrame {
 	home.setVisible(true);
         profile.setVisible(false);
 	home.check();
+	bn_Home.setBackground(new Color(104,26,228));
+	bn_Profile.setBackground(new Color(62,16,136));
+	bn_checkout.setBackground(new Color(62,16,136));
+	bn_addcar.setBackground(new Color(62,16,136));
+	bn_homec = "1";
+	bn_profilec = "0";
+	bn_addcarc = "0";
+	bn_checkoutc = "0";
 
     }//GEN-LAST:event_bn_HomeMouseClicked
 
     private void bn_ProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_ProfileMouseClicked
         home.setVisible(false);
         profile.setVisible(true);
+	bn_homec = "0";
+	bn_profilec = "1";
+	bn_addcarc = "0";
+	bn_checkoutc = "0";
+	bn_Home.setBackground(new Color(62,16,136));
+	bn_Profile.setBackground(new Color(104,26,228));
+	bn_checkout.setBackground(new Color(62,16,136));
+	bn_addcar.setBackground(new Color(62,16,136));
 
     }//GEN-LAST:event_bn_ProfileMouseClicked
 
@@ -351,12 +456,68 @@ public class MainUser extends javax.swing.JFrame {
     }//GEN-LAST:event_bn_HomeMouseEntered
 
     private void bn_HomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_HomeMouseExited
-        bn_Home.setBackground(new Color(62,16,136));
+        if(bn_homec == "0"){
+	    bn_Home.setBackground(new Color(62,16,136));
+	}
+	else{
+	    
+	}
     }//GEN-LAST:event_bn_HomeMouseExited
 
     private void bn_ProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_ProfileMouseExited
-        bn_Profile.setBackground(new Color(62,16,136));
+        if(bn_profilec == "0"){
+	    bn_Profile.setBackground(new Color(62,16,136));
+	}
+	else{
+	    
+	}
     }//GEN-LAST:event_bn_ProfileMouseExited
+
+    private void bn_checkoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_checkoutMouseClicked
+        bn_homec = "0";
+	bn_profilec = "0";
+	bn_addcarc = "0";
+	bn_checkoutc = "1";
+	bn_Home.setBackground(new Color(62,16,136));
+	bn_Profile.setBackground(new Color(62,16,136));
+	bn_checkout.setBackground(new Color(104,26,228));
+	bn_addcar.setBackground(new Color(62,16,136));
+    }//GEN-LAST:event_bn_checkoutMouseClicked
+
+    private void bn_checkoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_checkoutMouseEntered
+	bn_checkout.setBackground(new Color(104,26,228));
+    }//GEN-LAST:event_bn_checkoutMouseEntered
+
+    private void bn_checkoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_checkoutMouseExited
+        if(bn_checkoutc == "0"){
+	    bn_checkout.setBackground(new Color(62,16,136));
+	}else{
+	    
+	}
+    }//GEN-LAST:event_bn_checkoutMouseExited
+
+    private void bn_addcarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_addcarMouseClicked
+        bn_homec = "0";
+	bn_profilec = "0";
+	bn_addcarc = "1";
+	bn_checkoutc = "0";
+	bn_Home.setBackground(new Color(62,16,136));
+	bn_Profile.setBackground(new Color(62,16,136));
+	bn_checkout.setBackground(new Color(62,16,136));
+	bn_addcar.setBackground(new Color(104,26,228));
+    }//GEN-LAST:event_bn_addcarMouseClicked
+
+    private void bn_addcarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_addcarMouseEntered
+        bn_addcar.setBackground(new Color(104,26,228));
+    }//GEN-LAST:event_bn_addcarMouseEntered
+
+    private void bn_addcarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_addcarMouseExited
+        if(bn_addcarc == "0"){
+	    bn_addcar.setBackground(new Color(62,16,136));
+	}else{
+	    
+	}
+    }//GEN-LAST:event_bn_addcarMouseExited
 
     /**
      * @param args the command line arguments
@@ -403,10 +564,14 @@ public class MainUser extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bn_Home;
     private javax.swing.JPanel bn_Profile;
+    private javax.swing.JPanel bn_addcar;
+    private javax.swing.JPanel bn_checkout;
     private javax.swing.JPanel bn_exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel multiPanel;
     // End of variables declaration//GEN-END:variables

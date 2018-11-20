@@ -202,22 +202,19 @@ public class UiLogin extends javax.swing.JFrame {
     {
         JOptionPane.showMessageDialog(null,"Connected");
         if(rs.getString("memclass").equals("admin")){
-            WelcomeAdmin wela = new WelcomeAdmin();
-            wela.setVisible(true);
-            wela.pack();
-            wela.setLocationRelativeTo(null);
-            wela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            
-            
-            this.dispose();
+	    MainUser mainUser = new MainUser(user.getText(), "admin");
+	    mainUser.setVisible(true);
+	    mainUser.pack();
+	    mainUser.setLocationRelativeTo(null);
+	    mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    this.dispose();
         }
         else{
-            MainUser mainUser = new MainUser(user.getText());
+            MainUser mainUser = new MainUser(user.getText(), "not");
             mainUser.setVisible(true);
             mainUser.pack();
             mainUser.setLocationRelativeTo(null);
             mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
             this.dispose();
         }
     }

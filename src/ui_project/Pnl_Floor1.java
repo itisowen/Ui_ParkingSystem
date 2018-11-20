@@ -225,7 +225,7 @@ public class Pnl_Floor1 extends javax.swing.JPanel {
     }
     
     public String formGetLicense(String car){
-	String li = "test";
+	String li = "";
 	try{
 	    String sql = "SELECT * FROM `carlist` WHERE user = ? AND car = ?";
 	    con = MyConnection.getConnection();
