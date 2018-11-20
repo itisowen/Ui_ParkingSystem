@@ -91,7 +91,7 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         setMinimumSize(new java.awt.Dimension(710, 580));
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Floor 1", "Floor 2", "Floor 3", "Floor 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -100,10 +100,11 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Floor :");
 
-        divers.setBackground(new java.awt.Color(204, 255, 204));
+        divers.setBackground(new java.awt.Color(204, 204, 255));
         divers.setMinimumSize(new java.awt.Dimension(710, 562));
 
         javax.swing.GroupLayout diversLayout = new javax.swing.GroupLayout(divers);
@@ -117,7 +118,7 @@ public class Pnl_Booking extends javax.swing.JPanel {
             .addGap(0, 562, Short.MAX_VALUE)
         );
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setText("Car :");
 
         car_com.addActionListener(new java.awt.event.ActionListener() {
@@ -135,9 +136,9 @@ public class Pnl_Booking extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(car_com, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
             .addComponent(divers, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
