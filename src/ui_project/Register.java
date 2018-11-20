@@ -91,12 +91,12 @@ public class Register extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.setBackground(new java.awt.Color(35, 43, 43));
+        jPanel5.setBackground(new java.awt.Color(153, 153, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel1.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 254));
         jLabel1.setText("Username");
         jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, 23));
 
@@ -141,8 +141,8 @@ public class Register extends javax.swing.JFrame {
         jPanel5.add(tf_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 371, 36));
 
         button1.setActionCommand("Sign up");
-        button1.setBackground(new java.awt.Color(51, 51, 255));
-        button1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        button1.setBackground(new java.awt.Color(64, 64, 64));
+        button1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         button1.setForeground(new java.awt.Color(255, 255, 255));
         button1.setLabel("Sign up");
         button1.addActionListener(new java.awt.event.ActionListener() {
@@ -153,8 +153,8 @@ public class Register extends javax.swing.JFrame {
         jPanel5.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, 370, 50));
 
         jLabel3.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel3.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel3.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 254));
         jLabel3.setText("Password");
         jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, 23));
 
@@ -185,8 +185,8 @@ public class Register extends javax.swing.JFrame {
         jPanel5.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 371, 10));
 
         jLabel2.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel2.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 254));
         jLabel2.setText("Firstname");
         jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, 23));
 
@@ -211,8 +211,8 @@ public class Register extends javax.swing.JFrame {
         jPanel5.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 371, 10));
 
         jLabel5.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel5.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel5.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 254));
         jLabel5.setText("Lastname");
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, -1, 23));
 
@@ -237,8 +237,8 @@ public class Register extends javax.swing.JFrame {
         jPanel5.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 371, 10));
 
         jLabel6.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel6.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel6.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 254));
         jLabel6.setText("Car brand");
         jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, -1, 23));
 
@@ -263,8 +263,8 @@ public class Register extends javax.swing.JFrame {
         jPanel5.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 371, 10));
 
         jLabel7.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel7.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel7.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 254));
         jLabel7.setText("License plate");
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, -1, 23));
 
@@ -289,8 +289,8 @@ public class Register extends javax.swing.JFrame {
         jPanel5.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 371, 10));
 
         jLabel8.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel8.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel8.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 254));
         jLabel8.setText("Phone number");
         jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, -1, 23));
 
@@ -321,8 +321,8 @@ public class Register extends javax.swing.JFrame {
         jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, -1, 23));
 
         jLabel10.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel10.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel10.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 254));
         jLabel10.setText("Confirm password");
         jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, 23));
 

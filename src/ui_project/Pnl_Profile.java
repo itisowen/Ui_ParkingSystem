@@ -93,7 +93,9 @@ public class Pnl_Profile extends javax.swing.JPanel {
         car_pcom = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(204, 204, 255));
-        setMinimumSize(new java.awt.Dimension(710, 580));
+        setMinimumSize(new java.awt.Dimension(710, 624));
+        setPreferredSize(new java.awt.Dimension(710, 624));
+        setRequestFocusEnabled(false);
 
         jLabel2.setBackground(new java.awt.Color(35, 43, 43));
         jLabel2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
@@ -215,7 +217,8 @@ public class Pnl_Profile extends javax.swing.JPanel {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel1.setBackground(new java.awt.Color(62, 16, 136));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 254));
 
         jLabel3.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 254));

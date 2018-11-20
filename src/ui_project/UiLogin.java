@@ -61,12 +61,13 @@ public class UiLogin extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.setBackground(new java.awt.Color(35, 43, 43));
+        jPanel5.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel5.setForeground(new java.awt.Color(204, 204, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel1.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 254));
         jLabel1.setText("Username");
         jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, 23));
 
@@ -117,7 +118,7 @@ public class UiLogin extends javax.swing.JFrame {
         jPanel5.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 371, 36));
 
         button1.setActionCommand("Sing in");
-        button1.setBackground(new java.awt.Color(51, 51, 255));
+        button1.setBackground(new java.awt.Color(64, 64, 64));
         button1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         button1.setForeground(new java.awt.Color(255, 255, 255));
         button1.setLabel("Sign in");
@@ -129,8 +130,8 @@ public class UiLogin extends javax.swing.JFrame {
         jPanel5.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 370, 50));
 
         jLabel3.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel3.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel3.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 254));
         jLabel3.setText("Password");
         jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, 23));
 
@@ -170,12 +171,13 @@ public class UiLogin extends javax.swing.JFrame {
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 470, 540));
 
-        jPanel4.setBackground(new java.awt.Color(14, 17, 17));
+        jPanel4.setBackground(new java.awt.Color(62, 16, 136));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/2.png"))); // NOI18N
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 40, 60));
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/1.png"))); // NOI18N
         jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 110, 80));
 

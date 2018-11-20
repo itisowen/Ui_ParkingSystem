@@ -5,9 +5,9 @@
  */
 package ui_project;
 
+import java.awt.Color;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -194,7 +194,7 @@ public class MainUser extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(890, 580));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        multiPanel.setBackground(new java.awt.Color(204, 204, 255));
+        multiPanel.setBackground(new java.awt.Color(153, 153, 255));
         multiPanel.setMinimumSize(new java.awt.Dimension(710, 580));
 
         javax.swing.GroupLayout multiPanelLayout = new javax.swing.GroupLayout(multiPanel);
@@ -210,17 +210,25 @@ public class MainUser extends javax.swing.JFrame {
 
         getContentPane().add(multiPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 710, 580));
 
-        jPanel2.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel2.setBackground(new java.awt.Color(62, 16, 136));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bn_Home.setBackground(new java.awt.Color(54, 33, 89));
+        bn_Home.setBackground(new java.awt.Color(62, 16, 136));
+        bn_Home.setForeground(new java.awt.Color(104, 26, 228));
         bn_Home.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bn_HomeMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bn_HomeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bn_HomeMouseExited(evt);
+            }
         });
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 254));
         jLabel4.setText("Booking");
 
         javax.swing.GroupLayout bn_HomeLayout = new javax.swing.GroupLayout(bn_Home);
@@ -230,26 +238,34 @@ public class MainUser extends javax.swing.JFrame {
             .addGroup(bn_HomeLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel4)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         bn_HomeLayout.setVerticalGroup(
             bn_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_HomeLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel4)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel2.add(bn_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 70));
+        jPanel2.add(bn_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 180, 70));
 
-        bn_Profile.setBackground(new java.awt.Color(54, 33, 89));
+        bn_Profile.setBackground(new java.awt.Color(62, 16, 136));
+        bn_Profile.setForeground(new java.awt.Color(104, 26, 228));
         bn_Profile.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bn_ProfileMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bn_ProfileMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bn_ProfileMouseExited(evt);
+            }
         });
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 254));
         jLabel3.setText("Profile");
 
         javax.swing.GroupLayout bn_ProfileLayout = new javax.swing.GroupLayout(bn_Profile);
@@ -257,9 +273,9 @@ public class MainUser extends javax.swing.JFrame {
         bn_ProfileLayout.setHorizontalGroup(
             bn_ProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_ProfileLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel3)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         bn_ProfileLayout.setVerticalGroup(
             bn_ProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,14 +287,16 @@ public class MainUser extends javax.swing.JFrame {
 
         jPanel2.add(bn_Profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 180, -1));
 
-        bn_exit.setBackground(new java.awt.Color(54, 33, 89));
+        bn_exit.setBackground(new java.awt.Color(54, 33, 150));
+        bn_exit.setForeground(new java.awt.Color(255, 255, 254));
         bn_exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bn_exitMouseClicked(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 254));
         jLabel1.setText("Exit");
 
         javax.swing.GroupLayout bn_exitLayout = new javax.swing.GroupLayout(bn_exit);
@@ -286,16 +304,16 @@ public class MainUser extends javax.swing.JFrame {
         bn_exitLayout.setHorizontalGroup(
             bn_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_exitLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(62, 62, 62)
                 .addComponent(jLabel1)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         bn_exitLayout.setVerticalGroup(
             bn_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_exitLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27))
+                .addGap(26, 26, 26))
         );
 
         jPanel2.add(bn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 180, -1));
@@ -323,6 +341,22 @@ public class MainUser extends javax.swing.JFrame {
         profile.setVisible(true);
 
     }//GEN-LAST:event_bn_ProfileMouseClicked
+
+    private void bn_ProfileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_ProfileMouseEntered
+	bn_Profile.setBackground(new Color(104,26,228));
+    }//GEN-LAST:event_bn_ProfileMouseEntered
+
+    private void bn_HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_HomeMouseEntered
+        bn_Home.setBackground(new Color(104,26,228));
+    }//GEN-LAST:event_bn_HomeMouseEntered
+
+    private void bn_HomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_HomeMouseExited
+        bn_Home.setBackground(new Color(62,16,136));
+    }//GEN-LAST:event_bn_HomeMouseExited
+
+    private void bn_ProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_ProfileMouseExited
+        bn_Profile.setBackground(new Color(62,16,136));
+    }//GEN-LAST:event_bn_ProfileMouseExited
 
     /**
      * @param args the command line arguments
