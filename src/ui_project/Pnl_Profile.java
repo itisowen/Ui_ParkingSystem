@@ -92,12 +92,12 @@ public class Pnl_Profile extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         car_pcom = new javax.swing.JComboBox<>();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(204, 204, 255));
         setMinimumSize(new java.awt.Dimension(710, 580));
 
         jLabel2.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel2.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 254));
         jLabel2.setText("Firstname");
 
         tf_fname.setBackground(new java.awt.Color(35, 43, 43));
@@ -117,13 +117,13 @@ public class Pnl_Profile extends javax.swing.JPanel {
         });
 
         jLabel1.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel1.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 254));
         jLabel1.setText("Username");
 
         jLabel5.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel5.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel5.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 254));
         jLabel5.setText("Lastname");
 
         tf_lastname.setBackground(new java.awt.Color(35, 43, 43));
@@ -143,8 +143,8 @@ public class Pnl_Profile extends javax.swing.JPanel {
         });
 
         jLabel6.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel6.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel6.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 254));
         jLabel6.setText("Car brand");
 
         tf_user.setEditable(false);
@@ -165,8 +165,8 @@ public class Pnl_Profile extends javax.swing.JPanel {
         });
 
         jLabel7.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel7.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel7.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 254));
         jLabel7.setText("License plate");
 
         tf_license.setBackground(new java.awt.Color(35, 43, 43));
@@ -186,8 +186,8 @@ public class Pnl_Profile extends javax.swing.JPanel {
         });
 
         jLabel8.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel8.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(100, 151, 177));
+        jLabel8.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 254));
         jLabel8.setText("Phone number");
 
         tf_phonenumber.setBackground(new java.awt.Color(35, 43, 43));
@@ -206,6 +206,8 @@ public class Pnl_Profile extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 254));
         jButton1.setText("Update");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,10 +215,11 @@ public class Pnl_Profile extends javax.swing.JPanel {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel3.setText("Profile");
+        jLabel3.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 254));
+        jLabel3.setText("PROFILE");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -225,14 +228,14 @@ public class Pnl_Profile extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(334, 334, 334))
+                .addGap(250, 250, 250))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel3)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         car_pcom.addActionListener(new java.awt.event.ActionListener() {
@@ -245,10 +248,6 @@ public class Pnl_Profile extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -286,14 +285,18 @@ public class Pnl_Profile extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tf_lastname, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
                             .addComponent(car_pcom, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(283, 283, 283))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -317,9 +320,9 @@ public class Pnl_Profile extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_phonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
+                .addGap(43, 43, 43)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
