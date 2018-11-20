@@ -6,13 +6,8 @@
 package ui_project;
 
 
-import java.sql.Array;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import java.sql.*;
+import javax.swing.*;
 
 public class Pnl_Floor1 extends javax.swing.JPanel {
     

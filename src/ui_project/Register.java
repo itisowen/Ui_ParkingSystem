@@ -5,11 +5,8 @@
  */
 package ui_project;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import java.sql.*;
+import javax.swing.*;
 
 /**
  *

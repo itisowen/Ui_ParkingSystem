@@ -5,8 +5,7 @@
  */
 package ui_project;
 
-import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  *

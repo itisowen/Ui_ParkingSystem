@@ -5,14 +5,9 @@
  */
 package ui_project;
 
-import java.awt.Color;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import java.awt.*;
+import java.sql.*;
+import javax.swing.*;
 
 /**
  *
@@ -21,6 +16,8 @@ import javax.swing.JPanel;
 public class MainUser extends javax.swing.JFrame {
     Pnl_Booking home;
     Pnl_Profile profile;
+    Pnl_Checkout checkout;
+    Pnl_Addcar addcar;
     Pnl_Floor1 f1;
     private String user, isAdmin;
     private String bn_homec = "0", bn_profilec = "0", bn_checkoutc = "0", bn_addcarc = "0";
@@ -34,25 +31,33 @@ public class MainUser extends javax.swing.JFrame {
 	this.isAdmin = isAdmin;
 	if(this.isAdmin == "admin"){
 	    bn_checkout.setVisible(true);
+            bn_addcar.setVisible(true);
 	}
 	else{
 	    bn_checkout.setVisible(false);
+            bn_addcar.setVisible(false);
 	}
 	System.out.println(this.user);
         GridBagLayout layout = new GridBagLayout();
         home = new Pnl_Booking(this);
         profile = new Pnl_Profile(this);
+        checkout = new Pnl_Checkout(this);
+        addcar = new Pnl_Addcar(this);
         multiPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
         multiPanel.add(home, c);
         multiPanel.add(profile, c);
+        multiPanel.add(checkout, c);
+        multiPanel.add(addcar, c);
 	CarComboUpdate();
 	CarComboUpdateBook();
 	formSet();
         home.setVisible(true);
         profile.setVisible(false);
+        checkout.setVisible(false);
+        addcar.setVisible(false);
 
     }
 
@@ -421,6 +426,8 @@ public class MainUser extends javax.swing.JFrame {
 	CarComboUpdateBook();
 	home.setVisible(true);
         profile.setVisible(false);
+        checkout.setVisible(false);
+        addcar.setVisible(false);
 	home.check();
 	bn_Home.setBackground(new Color(104,26,228));
 	bn_Profile.setBackground(new Color(62,16,136));
@@ -436,6 +443,8 @@ public class MainUser extends javax.swing.JFrame {
     private void bn_ProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_ProfileMouseClicked
         home.setVisible(false);
         profile.setVisible(true);
+        checkout.setVisible(false);
+        addcar.setVisible(false);
 	bn_homec = "0";
 	bn_profilec = "1";
 	bn_addcarc = "0";
@@ -474,6 +483,10 @@ public class MainUser extends javax.swing.JFrame {
     }//GEN-LAST:event_bn_ProfileMouseExited
 
     private void bn_checkoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_checkoutMouseClicked
+        home.setVisible(false);
+        profile.setVisible(false);
+        checkout.setVisible(true);
+        addcar.setVisible(false);
         bn_homec = "0";
 	bn_profilec = "0";
 	bn_addcarc = "0";
@@ -497,6 +510,10 @@ public class MainUser extends javax.swing.JFrame {
     }//GEN-LAST:event_bn_checkoutMouseExited
 
     private void bn_addcarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_addcarMouseClicked
+        home.setVisible(false);
+        profile.setVisible(false);
+        checkout.setVisible(false);
+        addcar.setVisible(true);
         bn_homec = "0";
 	bn_profilec = "0";
 	bn_addcarc = "1";

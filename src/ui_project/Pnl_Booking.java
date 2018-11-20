@@ -5,13 +5,9 @@
  */
 package ui_project;
 
-import javax.swing.JComboBox;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import javax.swing.JOptionPane;
+import java.awt.*;
+import java.sql.*;
+import javax.swing.*;
 
 /**
  *

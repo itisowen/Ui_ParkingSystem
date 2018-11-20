@@ -5,13 +5,9 @@
  */
 package ui_project;
 
-import java.awt.HeadlessException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import java.awt.*;
+import java.sql.*;
+import javax.swing.*;
 
 public class UiLogin extends javax.swing.JFrame {
 
