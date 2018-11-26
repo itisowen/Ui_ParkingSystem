@@ -41,7 +41,7 @@ public class UiLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        exitLable = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -150,20 +150,26 @@ public class UiLogin extends javax.swing.JFrame {
         });
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(254, 255, 255));
-        jLabel8.setText("X");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        exitLable.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        exitLable.setForeground(new java.awt.Color(254, 255, 255));
+        exitLable.setText(" X");
+        exitLable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                exitLableMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitLableMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitLableMouseExited(evt);
             }
         });
-        jLabel8.addKeyListener(new java.awt.event.KeyAdapter() {
+        exitLable.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jLabel8KeyPressed(evt);
+                exitLableKeyPressed(evt);
             }
         });
-        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, -1, -1));
+        jPanel5.add(exitLable, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 20, -1));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 470, 540));
 
@@ -268,13 +274,21 @@ public class UiLogin extends javax.swing.JFrame {
 	
     }//GEN-LAST:event_passFocusGained
 
-    private void jLabel8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel8KeyPressed
+    private void exitLableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_exitLableKeyPressed
 
-    }//GEN-LAST:event_jLabel8KeyPressed
+    }//GEN-LAST:event_exitLableKeyPressed
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void exitLableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLableMouseClicked
          System.exit(1);
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_exitLableMouseClicked
+
+    private void exitLableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLableMouseEntered
+        exitLable.setForeground(Color.RED);
+    }//GEN-LAST:event_exitLableMouseEntered
+
+    private void exitLableMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLableMouseExited
+        exitLable.setForeground(Color.WHITE);
+    }//GEN-LAST:event_exitLableMouseExited
 
     /**
      * @param args the command line arguments
@@ -313,6 +327,7 @@ public class UiLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button1;
+    private javax.swing.JLabel exitLable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -320,7 +335,6 @@ public class UiLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
