@@ -51,9 +51,8 @@ public class MainUser extends javax.swing.JFrame {
         multiPanel.add(profile, c);
         multiPanel.add(checkout, c);
         multiPanel.add(addcar, c);
-	CarComboUpdate();
-	CarComboUpdateBook();
 	formSet();
+        bn_Home.setBackground(new Color(104,26,228));
         home.setVisible(true);
         profile.setVisible(false);
         checkout.setVisible(false);
@@ -62,46 +61,7 @@ public class MainUser extends javax.swing.JFrame {
     }
 
     private MainUser(String user) {
-    }
-    
-    public void CarComboUpdate(){
-	home.resetCarCombo();
-	try{
-	String sql = "SELECT * FROM `carlist` WHERE user = ?";
-	con = MyConnection.getConnection();
-	pst = con.prepareStatement(sql);
-	pst.setString(1, user);
-	rs_carlist = pst.executeQuery();
-	
-	while(rs_carlist.next()){
-	    String usercar = rs_carlist.getString("car");
-//	    home.CarComboUpdate(usercar);
-	    profile.CarComboUpdate(usercar);
-	}
-	}catch(Exception e){
-	    JOptionPane.showMessageDialog(null, e);
-	}
-    }
-    
-    public void CarComboUpdateBook(){
-	home.resetCarCombo();
-	try{
-	String sql = "SELECT * FROM `carlist` WHERE user = ? AND book = '0'";
-	con = MyConnection.getConnection();
-	pst = con.prepareStatement(sql);
-	pst.setString(1, user);
-	rs_carlist = pst.executeQuery();
-	
-	while(rs_carlist.next()){
-	    String usercar = rs_carlist.getString("car");
-	    home.CarComboUpdate(usercar);
-	}
-	
-	}catch(Exception e){
-	    JOptionPane.showMessageDialog(null, e);
-	}
-    }
-    
+    }   
     
     public void formSet(){
 	try{
@@ -428,13 +388,10 @@ public class MainUser extends javax.swing.JFrame {
     }//GEN-LAST:event_bn_exitMouseClicked
 
     private void bn_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_HomeMouseClicked
-	home.resetCarCombo();
-	CarComboUpdateBook();
 	home.setVisible(true);
         profile.setVisible(false);
         checkout.setVisible(false);
         addcar.setVisible(false);
-	home.check();
 	bn_Home.setBackground(new Color(104,26,228));
 	bn_Profile.setBackground(new Color(62,16,136));
 	bn_checkout.setBackground(new Color(62,16,136));

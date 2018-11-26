@@ -10,7 +10,7 @@ package ui_project;
  * @author Owen
  */
 public class Pnl_Floor2 extends javax.swing.JPanel {
-    private Pnl_Booking pb;
+    private Booking pb;
     /**
      * Creates new form Floor1
      */
@@ -18,7 +18,7 @@ public class Pnl_Floor2 extends javax.swing.JPanel {
         initComponents();
     }
 
-    Pnl_Floor2(Pnl_Booking pb) {
+    Pnl_Floor2(Booking pb) {
         this.pb = pb;
         initComponents();
     }

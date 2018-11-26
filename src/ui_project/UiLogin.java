@@ -1,4 +1,4 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -14,11 +14,11 @@ public class UiLogin extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    
+
     public UiLogin() {
         initComponents();
-	jPanel4.setFocusable(true);
-	setLocationRelativeTo(null);
+        jPanel4.setFocusable(true);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -193,42 +193,36 @@ public class UiLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_userActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        String sql="select * from test where user=? and pass=?";
-    try{
-        con = MyConnection.getConnection();
-        pst=con.prepareStatement(sql);
-        pst.setString(1,user.getText());
-        pst.setString(2,pass.getText());
-        rs=pst.executeQuery();
-    if(rs.next())
-    {
-        JOptionPane.showMessageDialog(null,"Connected");
-        if(rs.getString("memclass").equals("admin")){
-	    MainUser mainUser = new MainUser(user.getText(), "admin");
-	    mainUser.setVisible(true);
-	    mainUser.pack();
-	    mainUser.setLocationRelativeTo(null);
-	    mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    this.dispose();
+        String sql = "select * from test where user=? and pass=?";
+        try {
+            con = MyConnection.getConnection();
+            pst = con.prepareStatement(sql);
+            pst.setString(1, user.getText());
+            pst.setString(2, pass.getText());
+            rs = pst.executeQuery();
+            if (rs.next()) {
+//                JOptionPane.showMessageDialog(null, "Connected");
+                if (rs.getString("memclass").equals("admin")) {
+                    MainUser mainUser = new MainUser(user.getText(), "admin");
+                    mainUser.setVisible(true);
+                    mainUser.pack();
+                    mainUser.setLocationRelativeTo(null);
+                    mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    this.dispose();
+                } else {
+                    MainUser mainUser = new MainUser(user.getText(), "not");
+                    mainUser.setVisible(true);
+                    mainUser.pack();
+                    mainUser.setLocationRelativeTo(null);
+                    mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    this.dispose();
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Incorrect username or password");
+            }
+        } catch (SQLException | HeadlessException ex) {
+            JOptionPane.showMessageDialog(null, ex);
         }
-        else{
-            MainUser mainUser = new MainUser(user.getText(), "not");
-            mainUser.setVisible(true);
-            mainUser.pack();
-            mainUser.setLocationRelativeTo(null);
-            mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            this.dispose();
-        }
-    }
-    else
-        {   
-        JOptionPane.showMessageDialog(null, "Incorrect username or password");
-        }
-    }
-    catch(SQLException | HeadlessException ex)
-    {
-        JOptionPane.showMessageDialog(null,ex);
-    }
     }//GEN-LAST:event_button1ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -236,7 +230,7 @@ public class UiLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
-       
+
     }//GEN-LAST:event_passActionPerformed
 
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
@@ -249,29 +243,29 @@ public class UiLogin extends javax.swing.JFrame {
         regi.pack();
         regi.setLocationRelativeTo(null);
         regi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
         this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void userFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userFocusGained
-        if(user.getText().equals("username")){
-	    user.setText("");
-	}
-	if(pass.getText().equals("")){
-	    pass.setText("12345678");
-	}
-	
+        if (user.getText().equals("username")) {
+            user.setText("");
+        }
+        if (pass.getText().equals("")) {
+            pass.setText("12345678");
+        }
+
     }//GEN-LAST:event_userFocusGained
 
     private void passFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passFocusGained
-        if(pass.getText().equals("12345678")){
-	    pass.setText("");
-	}
-	if(user.getText().equals("")){
-	    user.setText("username");
-	}
-	   
-	
+        if (pass.getText().equals("12345678")) {
+            pass.setText("");
+        }
+        if (user.getText().equals("")) {
+            user.setText("username");
+        }
+
+
     }//GEN-LAST:event_passFocusGained
 
     private void exitLableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_exitLableKeyPressed
@@ -279,7 +273,7 @@ public class UiLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_exitLableKeyPressed
 
     private void exitLableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLableMouseClicked
-         System.exit(1);
+        System.exit(1);
     }//GEN-LAST:event_exitLableMouseClicked
 
     private void exitLableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLableMouseEntered

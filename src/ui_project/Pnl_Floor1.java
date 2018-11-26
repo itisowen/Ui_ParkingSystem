@@ -12,7 +12,7 @@ import javax.swing.*;
 public class Pnl_Floor1 extends javax.swing.JPanel {
     
     private MainUser mu;
-    private Pnl_Booking pb;
+    private Booking pb;
     private Pnl_Profile pn;
     private String fname, lname, license, car, user;
     private Connection con = null;
@@ -21,7 +21,7 @@ public class Pnl_Floor1 extends javax.swing.JPanel {
     private ImageIcon[] image = new ImageIcon[2];
     private int[] slot = new int[11];
 
-    Pnl_Floor1(Pnl_Booking pb, String user) {
+    Pnl_Floor1(Booking pb, String user) {
         initComponents();
 	image[0] = new ImageIcon(getClass().getResource("car1.png"));
 	image[1] = new ImageIcon(getClass().getResource("car2.png"));
