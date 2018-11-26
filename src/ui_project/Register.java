@@ -340,6 +340,9 @@ public class Register extends javax.swing.JFrame {
             }
         });
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel12MousePressed(evt);
             }
@@ -521,6 +524,10 @@ public class Register extends javax.swing.JFrame {
 	    tf_phonenumber.setText("");
 	}
     }//GEN-LAST:event_tf_phonenumberFocusGained
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel12MouseClicked
 
     /**
      * @param args the command line arguments

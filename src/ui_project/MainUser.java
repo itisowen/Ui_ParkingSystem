@@ -212,6 +212,7 @@ public class MainUser extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(890, 580));
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         multiPanel.setBackground(new java.awt.Color(153, 153, 255));
@@ -317,16 +318,16 @@ public class MainUser extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 254));
-        jLabel1.setText("Exit");
+        jLabel1.setText("Logout");
 
         javax.swing.GroupLayout bn_exitLayout = new javax.swing.GroupLayout(bn_exit);
         bn_exit.setLayout(bn_exitLayout);
         bn_exitLayout.setHorizontalGroup(
             bn_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_exitLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel1)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         bn_exitLayout.setVerticalGroup(
             bn_exitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -418,7 +419,12 @@ public class MainUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bn_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_exitMouseClicked
-        System.exit(0);
+        UiLogin ul = new UiLogin();
+	ul.setVisible(true);
+        ul.pack();
+        ul.setLocationRelativeTo(null);
+        ul.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	this.dispose();
     }//GEN-LAST:event_bn_exitMouseClicked
 
     private void bn_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_HomeMouseClicked
