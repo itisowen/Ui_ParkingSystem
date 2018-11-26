@@ -17,7 +17,7 @@ public class MainUser extends javax.swing.JFrame {
     Pnl_Booking home;
     Pnl_Profile profile;
     Pnl_Checkout checkout;
-    Pnl_Addcar addcar;
+    Pnl_Register addcar;
     Pnl_Floor1 f1;
     private String user, isAdmin;
     private String bn_homec = "0", bn_profilec = "0", bn_checkoutc = "0", bn_addcarc = "0";
@@ -31,18 +31,18 @@ public class MainUser extends javax.swing.JFrame {
 	this.isAdmin = isAdmin;
 	if(this.isAdmin == "admin"){
 	    bn_checkout.setVisible(true);
-            bn_addcar.setVisible(true);
+            bn_regis.setVisible(true);
 	}
 	else{
 	    bn_checkout.setVisible(false);
-            bn_addcar.setVisible(false);
+            bn_regis.setVisible(false);
 	}
 	System.out.println(this.user);
         GridBagLayout layout = new GridBagLayout();
         home = new Pnl_Booking(this);
         profile = new Pnl_Profile(this);
         checkout = new Pnl_Checkout(this);
-        addcar = new Pnl_Addcar(this);
+        addcar = new Pnl_Register(this);
         multiPanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -72,7 +72,6 @@ public class MainUser extends javax.swing.JFrame {
 	    rs_form = pst.executeQuery();
 	    while((rs_form!=null) && (rs_form.next())){
                 profile.setName(rs_form.getString("fname"));
-                profile.setLname(rs_form.getString("lname"));
 		profile.setUser(user);
 		profile.setPhonenumber(rs_form.getString("phonenumber"));
             }
@@ -102,7 +101,6 @@ public class MainUser extends javax.swing.JFrame {
 	String sql = "UPDATE `test` SET fname = ?, lname = ?, phonenumber = ? WHERE user = ?";
 	ps = con.prepareStatement(sql);
 	ps.setString(1, profile.getFname());
-	ps.setString(2, profile.getLname());
 	ps.setString(3, profile.getPhonenumber());
 	ps.setString(4, this.user);
 	if(ps.executeUpdate() > 0){
@@ -167,7 +165,7 @@ public class MainUser extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         bn_checkout = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        bn_addcar = new javax.swing.JPanel();
+        bn_regis = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -229,7 +227,7 @@ public class MainUser extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel2.add(bn_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 180, 70));
+        jPanel2.add(bn_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 180, 70));
 
         bn_Profile.setBackground(new java.awt.Color(62, 16, 136));
         bn_Profile.setForeground(new java.awt.Color(104, 26, 228));
@@ -266,7 +264,7 @@ public class MainUser extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPanel2.add(bn_Profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 180, -1));
+        jPanel2.add(bn_Profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 180, -1));
 
         bn_exit.setBackground(new java.awt.Color(54, 33, 150));
         bn_exit.setForeground(new java.awt.Color(255, 255, 254));
@@ -334,44 +332,44 @@ public class MainUser extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPanel2.add(bn_checkout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 180, -1));
+        jPanel2.add(bn_checkout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 180, -1));
 
-        bn_addcar.setBackground(new java.awt.Color(62, 16, 136));
-        bn_addcar.setForeground(new java.awt.Color(104, 26, 228));
-        bn_addcar.addMouseListener(new java.awt.event.MouseAdapter() {
+        bn_regis.setBackground(new java.awt.Color(62, 16, 136));
+        bn_regis.setForeground(new java.awt.Color(104, 26, 228));
+        bn_regis.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bn_addcarMouseClicked(evt);
+                bn_regisMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bn_addcarMouseEntered(evt);
+                bn_regisMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bn_addcarMouseExited(evt);
+                bn_regisMouseExited(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 254));
-        jLabel6.setText("Add Car");
+        jLabel6.setText("Register");
 
-        javax.swing.GroupLayout bn_addcarLayout = new javax.swing.GroupLayout(bn_addcar);
-        bn_addcar.setLayout(bn_addcarLayout);
-        bn_addcarLayout.setHorizontalGroup(
-            bn_addcarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_addcarLayout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+        javax.swing.GroupLayout bn_regisLayout = new javax.swing.GroupLayout(bn_regis);
+        bn_regis.setLayout(bn_regisLayout);
+        bn_regisLayout.setHorizontalGroup(
+            bn_regisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_regisLayout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addGap(40, 40, 40))
+                .addGap(30, 30, 30))
         );
-        bn_addcarLayout.setVerticalGroup(
-            bn_addcarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_addcarLayout.createSequentialGroup()
+        bn_regisLayout.setVerticalGroup(
+            bn_regisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bn_regisLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel6)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPanel2.add(bn_addcar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 180, -1));
+        jPanel2.add(bn_regis, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 180, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 580));
 
@@ -395,7 +393,7 @@ public class MainUser extends javax.swing.JFrame {
 	bn_Home.setBackground(new Color(104,26,228));
 	bn_Profile.setBackground(new Color(62,16,136));
 	bn_checkout.setBackground(new Color(62,16,136));
-	bn_addcar.setBackground(new Color(62,16,136));
+	bn_regis.setBackground(new Color(62,16,136));
 	bn_homec = "1";
 	bn_profilec = "0";
 	bn_addcarc = "0";
@@ -415,7 +413,7 @@ public class MainUser extends javax.swing.JFrame {
 	bn_Home.setBackground(new Color(62,16,136));
 	bn_Profile.setBackground(new Color(104,26,228));
 	bn_checkout.setBackground(new Color(62,16,136));
-	bn_addcar.setBackground(new Color(62,16,136));
+	bn_regis.setBackground(new Color(62,16,136));
 
     }//GEN-LAST:event_bn_ProfileMouseClicked
 
@@ -457,7 +455,7 @@ public class MainUser extends javax.swing.JFrame {
 	bn_Home.setBackground(new Color(62,16,136));
 	bn_Profile.setBackground(new Color(62,16,136));
 	bn_checkout.setBackground(new Color(104,26,228));
-	bn_addcar.setBackground(new Color(62,16,136));
+	bn_regis.setBackground(new Color(62,16,136));
     }//GEN-LAST:event_bn_checkoutMouseClicked
 
     private void bn_checkoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_checkoutMouseEntered
@@ -472,7 +470,7 @@ public class MainUser extends javax.swing.JFrame {
 	}
     }//GEN-LAST:event_bn_checkoutMouseExited
 
-    private void bn_addcarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_addcarMouseClicked
+    private void bn_regisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_regisMouseClicked
         home.setVisible(false);
         profile.setVisible(false);
         checkout.setVisible(false);
@@ -484,20 +482,20 @@ public class MainUser extends javax.swing.JFrame {
 	bn_Home.setBackground(new Color(62,16,136));
 	bn_Profile.setBackground(new Color(62,16,136));
 	bn_checkout.setBackground(new Color(62,16,136));
-	bn_addcar.setBackground(new Color(104,26,228));
-    }//GEN-LAST:event_bn_addcarMouseClicked
+	bn_regis.setBackground(new Color(104,26,228));
+    }//GEN-LAST:event_bn_regisMouseClicked
 
-    private void bn_addcarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_addcarMouseEntered
-        bn_addcar.setBackground(new Color(104,26,228));
-    }//GEN-LAST:event_bn_addcarMouseEntered
+    private void bn_regisMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_regisMouseEntered
+        bn_regis.setBackground(new Color(104,26,228));
+    }//GEN-LAST:event_bn_regisMouseEntered
 
-    private void bn_addcarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_addcarMouseExited
+    private void bn_regisMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_regisMouseExited
         if(bn_addcarc == "0"){
-	    bn_addcar.setBackground(new Color(62,16,136));
+	    bn_regis.setBackground(new Color(62,16,136));
 	}else{
 	    
 	}
-    }//GEN-LAST:event_bn_addcarMouseExited
+    }//GEN-LAST:event_bn_regisMouseExited
 
     /**
      * @param args the command line arguments
@@ -544,9 +542,9 @@ public class MainUser extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bn_Home;
     private javax.swing.JPanel bn_Profile;
-    private javax.swing.JPanel bn_addcar;
     private javax.swing.JPanel bn_checkout;
     private javax.swing.JPanel bn_exit;
+    private javax.swing.JPanel bn_regis;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

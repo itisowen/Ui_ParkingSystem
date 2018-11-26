@@ -448,10 +448,6 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_phonenumberActionPerformed
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jLabel11MouseClicked
-
     private void jLabel12MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
@@ -464,19 +460,6 @@ public class Register extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_jLabel12MousePressed
 
-    private void tf_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_passActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_passActionPerformed
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        log.setVisible(true);
-        log.pack();
-        log.setLocationRelativeTo(null);
-        log.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        this.dispose();
-    }//GEN-LAST:event_jLabel4MouseClicked
-
     private void tf_fnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_fnameFocusGained
        if(tf_fname.getText().equals("Firstname")){
 	    tf_fname.setText("");
@@ -488,18 +471,6 @@ public class Register extends javax.swing.JFrame {
 	    tf_user.setText("");
 	}
     }//GEN-LAST:event_tf_userFocusGained
-
-    private void tf_passFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_passFocusGained
-        if(tf_pass.getText().equals("12345678910")){
-	    tf_pass.setText("");
-	}
-    }//GEN-LAST:event_tf_passFocusGained
-
-    private void tf_repassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_repassFocusGained
-        if(tf_repass.getText().equals("12345678910")){
-	    tf_repass.setText("");
-	}
-    }//GEN-LAST:event_tf_repassFocusGained
 
     private void tf_lastnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_lastnameFocusGained
         if(tf_lastname.getText().equals("Lastname")){
@@ -528,6 +499,35 @@ public class Register extends javax.swing.JFrame {
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void tf_repassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_repassFocusGained
+        if(tf_repass.getText().equals("12345678910")){
+            tf_repass.setText("");
+        }
+    }//GEN-LAST:event_tf_repassFocusGained
+
+    private void tf_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_passActionPerformed
+
+    private void tf_passFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_passFocusGained
+        if(tf_pass.getText().equals("12345678910")){
+            tf_pass.setText("");
+        }
+    }//GEN-LAST:event_tf_passFocusGained
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        log.setVisible(true);
+        log.pack();
+        log.setLocationRelativeTo(null);
+        log.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        this.dispose();
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments

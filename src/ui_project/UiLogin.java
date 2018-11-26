@@ -32,14 +32,12 @@ public class UiLogin extends javax.swing.JFrame {
 
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         user = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         pass = new javax.swing.JPasswordField();
         button1 = new java.awt.Button();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         exitLable = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -66,12 +64,6 @@ public class UiLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 254));
         jLabel1.setText("Username");
         jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, 23));
-
-        jLabel2.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel2.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(254, 255, 255));
-        jLabel2.setText("Don't have an account?");
-        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, 23));
 
         user.setBackground(new java.awt.Color(35, 43, 43));
         user.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
@@ -130,17 +122,6 @@ public class UiLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 254));
         jLabel3.setText("Password");
         jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, 23));
-
-        jLabel4.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel4.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel4.setText("Register now!");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, 23));
 
         jLabel7.setBackground(new java.awt.Color(35, 43, 43));
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -237,16 +218,6 @@ public class UiLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formMouseDragged
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        Register regi = new Register();
-        regi.setVisible(true);
-        regi.pack();
-        regi.setLocationRelativeTo(null);
-        regi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        this.dispose();
-    }//GEN-LAST:event_jLabel4MouseClicked
-
     private void userFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userFocusGained
         if (user.getText().equals("username")) {
             user.setText("");
@@ -323,9 +294,7 @@ public class UiLogin extends javax.swing.JFrame {
     private java.awt.Button button1;
     private javax.swing.JLabel exitLable;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

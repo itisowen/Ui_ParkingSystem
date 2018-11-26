@@ -27,10 +27,6 @@ public class Pnl_Profile extends javax.swing.JPanel {
 	tf_fname.setText(name);
     }
 
-    public void setLname(String lname) {
-	tf_lastname.setText(lname);
-    }
-
     public void setUser(String user) {
 	tf_user.setText(user);
     }
@@ -45,10 +41,6 @@ public class Pnl_Profile extends javax.swing.JPanel {
     
     public String getFname() {
 	return tf_fname.getText();
-    }
-
-    public String getLname() {
-	return tf_lastname.getText();
     }
 
     public String getUser() {
@@ -74,8 +66,6 @@ public class Pnl_Profile extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         tf_fname = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        tf_lastname = new javax.swing.JTextField();
         tf_user = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         tf_license = new javax.swing.JTextField();
@@ -85,6 +75,9 @@ public class Pnl_Profile extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setMinimumSize(new java.awt.Dimension(710, 624));
@@ -94,12 +87,12 @@ public class Pnl_Profile extends javax.swing.JPanel {
         jLabel2.setBackground(new java.awt.Color(35, 43, 43));
         jLabel2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 254));
-        jLabel2.setText("Firstname");
+        jLabel2.setText("Fullname");
 
         tf_fname.setBackground(new java.awt.Color(35, 43, 43));
         tf_fname.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         tf_fname.setForeground(new java.awt.Color(254, 255, 255));
-        tf_fname.setText("Firstname");
+        tf_fname.setText("Fullname");
         tf_fname.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         tf_fname.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -116,27 +109,6 @@ public class Pnl_Profile extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 254));
         jLabel1.setText("Username");
-
-        jLabel5.setBackground(new java.awt.Color(35, 43, 43));
-        jLabel5.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 254));
-        jLabel5.setText("Lastname");
-
-        tf_lastname.setBackground(new java.awt.Color(35, 43, 43));
-        tf_lastname.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        tf_lastname.setForeground(new java.awt.Color(254, 255, 255));
-        tf_lastname.setText("Lastname");
-        tf_lastname.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        tf_lastname.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                tf_lastnameFocusGained(evt);
-            }
-        });
-        tf_lastname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_lastnameActionPerformed(evt);
-            }
-        });
 
         tf_user.setEditable(false);
         tf_user.setBackground(new java.awt.Color(35, 43, 43));
@@ -237,6 +209,20 @@ public class Pnl_Profile extends javax.swing.JPanel {
             }
         });
 
+        jButton3.setText("search");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel4.setText("Car brand");
+
+        jTextField1.setBackground(new java.awt.Color(35, 43, 43));
+        jTextField1.setText("Car brand");
+        jTextField1.setBorder(null);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -249,16 +235,24 @@ public class Pnl_Profile extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 83, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tf_phonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tf_license, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(tf_license, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tf_phonenumber, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+                                    .addComponent(jTextField1)))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -269,15 +263,12 @@ public class Pnl_Profile extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tf_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(jLabel5)
-                        .addGap(12, 12, Short.MAX_VALUE)
-                        .addComponent(tf_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56))
+                                .addComponent(tf_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,19 +283,20 @@ public class Pnl_Profile extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_license, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_license, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_phonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(87, 87, 87)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(94, 94, 94)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -319,16 +311,6 @@ public class Pnl_Profile extends javax.swing.JPanel {
     private void tf_fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_fnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_fnameActionPerformed
-
-    private void tf_lastnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_lastnameFocusGained
-        if(tf_lastname.getText().equals("Lastname")){
-            tf_lastname.setText("");
-        }
-    }//GEN-LAST:event_tf_lastnameFocusGained
-
-    private void tf_lastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_lastnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_lastnameActionPerformed
 
     private void tf_userFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_userFocusGained
         if(tf_user.getText().equals("username")){
@@ -368,19 +350,24 @@ public class Pnl_Profile extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField tf_fname;
-    private javax.swing.JTextField tf_lastname;
     private javax.swing.JTextField tf_license;
     private javax.swing.JTextField tf_phonenumber;
     private javax.swing.JTextField tf_user;
