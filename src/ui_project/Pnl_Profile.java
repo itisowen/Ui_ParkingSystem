@@ -214,6 +214,8 @@ public class Pnl_Profile extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        searchUser.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        searchUser.setForeground(new java.awt.Color(255, 255, 254));
         searchUser.setText("search");
         searchUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,6 +223,8 @@ public class Pnl_Profile extends javax.swing.JPanel {
             }
         });
 
+        searchLicense.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        searchLicense.setForeground(new java.awt.Color(255, 255, 254));
         searchLicense.setText("search");
         searchLicense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +241,12 @@ public class Pnl_Profile extends javax.swing.JPanel {
         tf_car.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         tf_car.setForeground(new java.awt.Color(255, 255, 254));
         tf_car.setText("Car brand");
-        tf_car.setBorder(null);
+        tf_car.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tf_car.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_carActionPerformed(evt);
+            }
+        });
 
         jLabel5.setBackground(new java.awt.Color(35, 43, 43));
         jLabel5.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
@@ -248,6 +257,7 @@ public class Pnl_Profile extends javax.swing.JPanel {
         tf_lname.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         tf_lname.setForeground(new java.awt.Color(255, 255, 254));
         tf_lname.setText("Lastname");
+        tf_lname.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         tf_lname.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 tf_lnameFocusGained(evt);
@@ -382,6 +392,10 @@ public class Pnl_Profile extends javax.swing.JPanel {
             tf_lname.setText("");
         }
     }//GEN-LAST:event_tf_lnameFocusGained
+
+    private void tf_carActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_carActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_carActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

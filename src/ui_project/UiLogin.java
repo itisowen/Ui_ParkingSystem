@@ -5,6 +5,7 @@
  */
 package ui_project;
 
+import com.sun.glass.events.KeyEvent;
 import java.awt.*;
 import java.sql.*;
 import javax.swing.*;
@@ -21,6 +22,38 @@ public class UiLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
+    public void login(){
+        String sql = "select * from test where user=? and pass=?";
+        try {
+            con = MyConnection.getConnection();
+            pst = con.prepareStatement(sql);
+            pst.setString(1, user.getText());
+            pst.setString(2, pass.getText());
+            rs = pst.executeQuery();
+            if (rs.next()) {
+//                JOptionPane.showMessageDialog(null, "Connected");
+                if (rs.getString("memclass").equals("admin")) {
+                    MainUser mainUser = new MainUser(user.getText(), "admin");
+                    mainUser.setVisible(true);
+                    mainUser.pack();
+                    mainUser.setLocationRelativeTo(null);
+                    mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    this.dispose();
+                } else {
+                    MainUser mainUser = new MainUser(user.getText(), "not");
+                    mainUser.setVisible(true);
+                    mainUser.pack();
+                    mainUser.setLocationRelativeTo(null);
+                    mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    this.dispose();
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Incorrect username or password");
+            }
+        } catch (SQLException | HeadlessException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,6 +84,11 @@ public class UiLogin extends javax.swing.JFrame {
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 formMouseDragged(evt);
+            }
+        });
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,6 +141,11 @@ public class UiLogin extends javax.swing.JFrame {
                 passActionPerformed(evt);
             }
         });
+        pass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passKeyPressed(evt);
+            }
+        });
         jPanel5.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 371, 36));
 
         button1.setActionCommand("Sing in");
@@ -113,6 +156,11 @@ public class UiLogin extends javax.swing.JFrame {
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
+            }
+        });
+        button1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                button1KeyPressed(evt);
             }
         });
         jPanel5.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 370, 50));
@@ -174,36 +222,7 @@ public class UiLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_userActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        String sql = "select * from test where user=? and pass=?";
-        try {
-            con = MyConnection.getConnection();
-            pst = con.prepareStatement(sql);
-            pst.setString(1, user.getText());
-            pst.setString(2, pass.getText());
-            rs = pst.executeQuery();
-            if (rs.next()) {
-//                JOptionPane.showMessageDialog(null, "Connected");
-                if (rs.getString("memclass").equals("admin")) {
-                    MainUser mainUser = new MainUser(user.getText(), "admin");
-                    mainUser.setVisible(true);
-                    mainUser.pack();
-                    mainUser.setLocationRelativeTo(null);
-                    mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    this.dispose();
-                } else {
-                    MainUser mainUser = new MainUser(user.getText(), "not");
-                    mainUser.setVisible(true);
-                    mainUser.pack();
-                    mainUser.setLocationRelativeTo(null);
-                    mainUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    this.dispose();
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Incorrect username or password");
-            }
-        } catch (SQLException | HeadlessException ex) {
-            JOptionPane.showMessageDialog(null, ex);
-        }
+        login();
     }//GEN-LAST:event_button1ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -254,6 +273,20 @@ public class UiLogin extends javax.swing.JFrame {
     private void exitLableMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLableMouseExited
         exitLable.setForeground(Color.WHITE);
     }//GEN-LAST:event_exitLableMouseExited
+
+    private void button1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_button1KeyPressed
+
+    }//GEN-LAST:event_button1KeyPressed
+
+    private void passKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            login();
+        }
+    }//GEN-LAST:event_passKeyPressed
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyPressed
 
     /**
      * @param args the command line arguments

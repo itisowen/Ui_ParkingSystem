@@ -69,12 +69,14 @@ public class MainUser extends javax.swing.JFrame {
     public void clearTf(String but){
 	if(but == "user"){
 	    profile.setName("");
+            profile.setLname("");
 	    profile.setPhonenumber("");
 	    profile.setLicense("");
 	    profile.setCar("");
 	}
 	else if(but == "license"){
 	    profile.setName("");
+            profile.setLname("");
 	    profile.setPhonenumber("");
 	    profile.setUser("");
 	    profile.setCar("");
@@ -214,6 +216,7 @@ public class MainUser extends javax.swing.JFrame {
 	    rs_form = pst.executeQuery();
 	    if(rs_form.next()){
                 profile.setName(rs_form.getString("fname"));
+                profile.setLname(rs_form.getString("lname"));
 		profile.setUser(user);
 		profile.setPhonenumber(rs_form.getString("phonenumber"));
             }
@@ -245,11 +248,12 @@ public class MainUser extends javax.swing.JFrame {
     
     public void formUpdate(String user){
 	try{
-	String sql = "UPDATE `test` SET fname = ?, phonenumber = ? WHERE user = ?";
+	String sql = "UPDATE `test` SET fname = ?, lname = ?, phonenumber = ? WHERE user = ?";
 	ps = con.prepareStatement(sql);
 	ps.setString(1, profile.getFname());
-	ps.setString(2, profile.getPhonenumber());
-	ps.setString(3, user);
+        ps.setString(2, profile.getLname());
+	ps.setString(3, profile.getPhonenumber());
+	ps.setString(4, user);
 	if(ps.executeUpdate() > 0){
 	    JOptionPane.showMessageDialog(null, "Update name");
 	}
