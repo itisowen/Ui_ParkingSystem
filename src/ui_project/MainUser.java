@@ -23,7 +23,7 @@ public class MainUser extends javax.swing.JFrame {
     private String bn_homec = "0", bn_profilec = "0", bn_checkoutc = "0", bn_addcarc = "0";
     private Connection con = null;
     private PreparedStatement pst, ps = null;
-    private ResultSet rs_form, rs_license, rs_slot, rs_name = null;
+    private ResultSet rs_form, rs_license, rs_slot, rs_name, rs_checkout = null;
     
     public MainUser(String user, String isAdmin) {
         initComponents();
@@ -78,6 +78,49 @@ public class MainUser extends javax.swing.JFrame {
 	    profile.setPhonenumber("");
 	    profile.setUser("");
 	    profile.setCar("");
+	}
+    }
+    
+    public void checkOut_detail(String license){
+	try{
+		String sql = "SELECT * FROM `floor` WHERE license = ? ";
+		con = MyConnection.getConnection();
+		pst = con.prepareStatement(sql);
+		pst.setString(1, license);
+		rs_checkout = pst.executeQuery();
+		if(rs_checkout.next()){
+		    checkout.setTf_Fname(rs_checkout.getString("fname"));
+		    checkout.setTf_Lname(rs_checkout.getString("lname"));
+		    checkout.setTf_User(rs_checkout.getString("user"));
+		    checkout.setTf_Slot(rs_checkout.getString("slot"));
+		}
+		else{
+		    JOptionPane.showMessageDialog(null, "Not Found this license");
+		}
+	    }catch(Exception ex){
+		   System.out.println(ex);
+	    }
+    }
+    
+    public void checkOut(String slot){
+	try{
+	    String sql2 = "UPDATE `floor` SET  user = ?, fname = ?, lname = ?, license = ?, availble = 0 WHERE slot = ?";
+	    PreparedStatement ps = con.prepareStatement(sql2);
+	    ps.setString(1, "");
+	    ps.setString(2, "");
+	    ps.setString(3, "");
+	    ps.setString(4, "");
+	    
+	    ps.setString(5, slot);
+	    
+	    if(ps.executeUpdate() > 0){
+		JOptionPane.showMessageDialog(null, "CheckOut");
+		checkout.clearTf();
+		
+		
+	    }
+	}catch(Exception ex){
+	    System.out.println(ex);
 	}
     }
     

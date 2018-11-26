@@ -388,29 +388,31 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.setBackground(new java.awt.Color(153, 153, 255));
         pn_parking.setLayout(null);
 
+        bn_a1.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
         bn_a1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bn_a1MouseClicked(evt);
             }
         });
 
-        jLabel1.setText("A1");
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel1.setText("1");
 
         javax.swing.GroupLayout bn_a1Layout = new javax.swing.GroupLayout(bn_a1);
         bn_a1.setLayout(bn_a1Layout);
         bn_a1Layout.setHorizontalGroup(
             bn_a1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_a1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel1)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         bn_a1Layout.setVerticalGroup(
             bn_a1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_a1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_a1);
@@ -422,23 +424,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel10.setText("A2");
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel10.setText("2");
 
         javax.swing.GroupLayout bn_a2Layout = new javax.swing.GroupLayout(bn_a2);
         bn_a2.setLayout(bn_a2Layout);
         bn_a2Layout.setHorizontalGroup(
             bn_a2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_a2Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+            .addGroup(bn_a2Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
                 .addComponent(jLabel10)
-                .addGap(41, 41, 41))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         bn_a2Layout.setVerticalGroup(
             bn_a2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_a2Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+            .addGroup(bn_a2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel10)
-                .addGap(40, 40, 40))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_a2);
@@ -450,23 +453,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel17.setText("A3");
+        jLabel17.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel17.setText("3");
 
         javax.swing.GroupLayout bn_a3Layout = new javax.swing.GroupLayout(bn_a3);
         bn_a3.setLayout(bn_a3Layout);
         bn_a3Layout.setHorizontalGroup(
             bn_a3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_a3Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(42, 42, 42)
                 .addComponent(jLabel17)
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         bn_a3Layout.setVerticalGroup(
             bn_a3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_a3Layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+            .addGroup(bn_a3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel17)
-                .addGap(41, 41, 41))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_a3);
@@ -478,7 +482,8 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel11.setText("A4");
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel11.setText("4");
 
         javax.swing.GroupLayout bn_a4Layout = new javax.swing.GroupLayout(bn_a4);
         bn_a4.setLayout(bn_a4Layout);
@@ -487,14 +492,14 @@ public class Pnl_Booking extends javax.swing.JPanel {
             .addGroup(bn_a4Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel11)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         bn_a4Layout.setVerticalGroup(
             bn_a4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_a4Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+            .addGroup(bn_a4Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel11)
-                .addGap(40, 40, 40))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_a4);
@@ -506,23 +511,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel15.setText("A5");
+        jLabel15.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel15.setText("5");
 
         javax.swing.GroupLayout bn_a5Layout = new javax.swing.GroupLayout(bn_a5);
         bn_a5.setLayout(bn_a5Layout);
         bn_a5Layout.setHorizontalGroup(
             bn_a5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_a5Layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+            .addGroup(bn_a5Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
                 .addComponent(jLabel15)
-                .addGap(42, 42, 42))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         bn_a5Layout.setVerticalGroup(
             bn_a5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_a5Layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+            .addGroup(bn_a5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel15)
-                .addGap(39, 39, 39))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_a5);
@@ -534,23 +540,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel16.setText("A6");
+        jLabel16.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel16.setText("6");
 
         javax.swing.GroupLayout bn_a6Layout = new javax.swing.GroupLayout(bn_a6);
         bn_a6.setLayout(bn_a6Layout);
         bn_a6Layout.setHorizontalGroup(
             bn_a6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_a6Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_a6Layout.createSequentialGroup()
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addComponent(jLabel16)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(42, 42, 42))
         );
         bn_a6Layout.setVerticalGroup(
             bn_a6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_a6Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+            .addGroup(bn_a6Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel16)
-                .addGap(38, 38, 38))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_a6);
@@ -562,7 +569,8 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel18.setText("B1");
+        jLabel18.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel18.setText("7");
 
         javax.swing.GroupLayout bn_b1Layout = new javax.swing.GroupLayout(bn_b1);
         bn_b1.setLayout(bn_b1Layout);
@@ -576,9 +584,9 @@ public class Pnl_Booking extends javax.swing.JPanel {
         bn_b1Layout.setVerticalGroup(
             bn_b1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_b1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addContainerGap()
                 .addComponent(jLabel18)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_b1);
@@ -590,23 +598,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel20.setText("B2");
+        jLabel20.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel20.setText("8");
 
         javax.swing.GroupLayout bn_b2Layout = new javax.swing.GroupLayout(bn_b2);
         bn_b2.setLayout(bn_b2Layout);
         bn_b2Layout.setHorizontalGroup(
             bn_b2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_b2Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_b2Layout.createSequentialGroup()
+                .addContainerGap(46, Short.MAX_VALUE)
                 .addComponent(jLabel20)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(41, 41, 41))
         );
         bn_b2Layout.setVerticalGroup(
             bn_b2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_b2Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addContainerGap()
                 .addComponent(jLabel20)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_b2);
@@ -618,7 +627,8 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel21.setText("B3");
+        jLabel21.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel21.setText("9");
 
         javax.swing.GroupLayout bn_b3Layout = new javax.swing.GroupLayout(bn_b3);
         bn_b3.setLayout(bn_b3Layout);
@@ -632,9 +642,9 @@ public class Pnl_Booking extends javax.swing.JPanel {
         bn_b3Layout.setVerticalGroup(
             bn_b3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_b3Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addContainerGap()
                 .addComponent(jLabel21)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_b3);
@@ -646,23 +656,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel25.setText("B4");
+        jLabel25.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel25.setText("10");
 
         javax.swing.GroupLayout bn_b4Layout = new javax.swing.GroupLayout(bn_b4);
         bn_b4.setLayout(bn_b4Layout);
         bn_b4Layout.setHorizontalGroup(
             bn_b4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_b4Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel25)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         bn_b4Layout.setVerticalGroup(
             bn_b4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_b4Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addContainerGap()
                 .addComponent(jLabel25)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_b4);
@@ -674,23 +685,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel26.setText("B5");
+        jLabel26.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel26.setText("11");
 
         javax.swing.GroupLayout bn_b5Layout = new javax.swing.GroupLayout(bn_b5);
         bn_b5.setLayout(bn_b5Layout);
         bn_b5Layout.setHorizontalGroup(
             bn_b5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_b5Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_b5Layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jLabel26)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
         bn_b5Layout.setVerticalGroup(
             bn_b5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_b5Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel26)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_b5);
@@ -702,23 +714,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel27.setText("B6");
+        jLabel27.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel27.setText("12");
 
         javax.swing.GroupLayout bn_b6Layout = new javax.swing.GroupLayout(bn_b6);
         bn_b6.setLayout(bn_b6Layout);
         bn_b6Layout.setHorizontalGroup(
             bn_b6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_b6Layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(jLabel27)
-                .addGap(41, 41, 41))
+                .addGap(36, 36, 36))
         );
         bn_b6Layout.setVerticalGroup(
             bn_b6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_b6Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel27)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_b6);
@@ -730,23 +743,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel56.setText("C1");
+        jLabel56.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel56.setText("13");
 
         javax.swing.GroupLayout bn_c1Layout = new javax.swing.GroupLayout(bn_c1);
         bn_c1.setLayout(bn_c1Layout);
         bn_c1Layout.setHorizontalGroup(
             bn_c1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_c1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel56)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         bn_c1Layout.setVerticalGroup(
             bn_c1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_c1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel56)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_c1);
@@ -758,23 +772,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel36.setText("C2");
+        jLabel36.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel36.setText("14");
 
         javax.swing.GroupLayout bn_c2Layout = new javax.swing.GroupLayout(bn_c2);
         bn_c2.setLayout(bn_c2Layout);
         bn_c2Layout.setHorizontalGroup(
             bn_c2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_c2Layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+            .addGroup(bn_c2Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
                 .addComponent(jLabel36)
-                .addGap(41, 41, 41))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         bn_c2Layout.setVerticalGroup(
             bn_c2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_c2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel36)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_c2);
@@ -786,23 +801,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel58.setText("C3");
+        jLabel58.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel58.setText("15");
 
         javax.swing.GroupLayout bn_c3Layout = new javax.swing.GroupLayout(bn_c3);
         bn_c3.setLayout(bn_c3Layout);
         bn_c3Layout.setHorizontalGroup(
             bn_c3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_c3Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel58)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         bn_c3Layout.setVerticalGroup(
             bn_c3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_c3Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addContainerGap()
                 .addComponent(jLabel58)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_c3);
@@ -814,23 +830,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel39.setText("C4");
+        jLabel39.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel39.setText("16");
 
         javax.swing.GroupLayout bn_c4Layout = new javax.swing.GroupLayout(bn_c4);
         bn_c4.setLayout(bn_c4Layout);
         bn_c4Layout.setHorizontalGroup(
             bn_c4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_c4Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_c4Layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jLabel39)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
         bn_c4Layout.setVerticalGroup(
             bn_c4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_c4Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addContainerGap()
                 .addComponent(jLabel39)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_c4);
@@ -842,23 +859,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel57.setText("C5");
+        jLabel57.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel57.setText("17");
 
         javax.swing.GroupLayout bn_c5Layout = new javax.swing.GroupLayout(bn_c5);
         bn_c5.setLayout(bn_c5Layout);
         bn_c5Layout.setHorizontalGroup(
             bn_c5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_c5Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_c5Layout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(jLabel57)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
         bn_c5Layout.setVerticalGroup(
             bn_c5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_c5Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel57)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_c5);
@@ -870,23 +888,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel64.setText("C6");
+        jLabel64.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel64.setText("18");
 
         javax.swing.GroupLayout bn_c6Layout = new javax.swing.GroupLayout(bn_c6);
         bn_c6.setLayout(bn_c6Layout);
         bn_c6Layout.setHorizontalGroup(
             bn_c6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_c6Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_c6Layout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addComponent(jLabel64)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
         );
         bn_c6Layout.setVerticalGroup(
             bn_c6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_c6Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel64)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_c6);
@@ -898,23 +917,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel59.setText("D1");
+        jLabel59.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel59.setText("19");
 
         javax.swing.GroupLayout bn_d1Layout = new javax.swing.GroupLayout(bn_d1);
         bn_d1.setLayout(bn_d1Layout);
         bn_d1Layout.setHorizontalGroup(
             bn_d1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_d1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_d1Layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jLabel59)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
         bn_d1Layout.setVerticalGroup(
             bn_d1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_d1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel59)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_d1);
@@ -926,23 +946,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel60.setText("D2");
+        jLabel60.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel60.setText("20");
 
         javax.swing.GroupLayout bn_d2Layout = new javax.swing.GroupLayout(bn_d2);
         bn_d2.setLayout(bn_d2Layout);
         bn_d2Layout.setHorizontalGroup(
             bn_d2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_d2Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_d2Layout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addComponent(jLabel60)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
         );
         bn_d2Layout.setVerticalGroup(
             bn_d2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_d2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel60)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_d2);
@@ -954,23 +975,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel61.setText("D3");
+        jLabel61.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel61.setText("21");
 
         javax.swing.GroupLayout bn_d3Layout = new javax.swing.GroupLayout(bn_d3);
         bn_d3.setLayout(bn_d3Layout);
         bn_d3Layout.setHorizontalGroup(
             bn_d3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_d3Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_d3Layout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addComponent(jLabel61)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(33, 33, 33))
         );
         bn_d3Layout.setVerticalGroup(
             bn_d3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_d3Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel61)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_d3);
@@ -982,23 +1004,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel62.setText("D4");
+        jLabel62.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel62.setText("22");
 
         javax.swing.GroupLayout bn_d4Layout = new javax.swing.GroupLayout(bn_d4);
         bn_d4.setLayout(bn_d4Layout);
         bn_d4Layout.setHorizontalGroup(
             bn_d4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_d4Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_d4Layout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(jLabel62)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
         bn_d4Layout.setVerticalGroup(
             bn_d4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_d4Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel62)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_d4);
@@ -1010,23 +1033,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel63.setText("D5");
+        jLabel63.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel63.setText("23");
 
         javax.swing.GroupLayout bn_d5Layout = new javax.swing.GroupLayout(bn_d5);
         bn_d5.setLayout(bn_d5Layout);
         bn_d5Layout.setHorizontalGroup(
             bn_d5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_d5Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jLabel63)
-                .addGap(42, 42, 42))
+                .addGap(35, 35, 35))
         );
         bn_d5Layout.setVerticalGroup(
             bn_d5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_d5Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel63)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_d5);
@@ -1038,23 +1062,24 @@ public class Pnl_Booking extends javax.swing.JPanel {
             }
         });
 
-        jLabel66.setText("D6");
+        jLabel66.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel66.setText("24");
 
         javax.swing.GroupLayout bn_d6Layout = new javax.swing.GroupLayout(bn_d6);
         bn_d6.setLayout(bn_d6Layout);
         bn_d6Layout.setHorizontalGroup(
             bn_d6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bn_d6Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bn_d6Layout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
                 .addComponent(jLabel66)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
         );
         bn_d6Layout.setVerticalGroup(
             bn_d6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bn_d6Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addContainerGap()
                 .addComponent(jLabel66)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pn_parking.add(bn_d6);
@@ -1073,6 +1098,7 @@ public class Pnl_Booking extends javax.swing.JPanel {
 	else{
 	    
 	}
+	
 	tf_user.setText(this.user);
     }//GEN-LAST:event_jButton1ActionPerformed
 
