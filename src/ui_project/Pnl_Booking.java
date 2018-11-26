@@ -5,28 +5,281 @@
  */
 package ui_project;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Owen
  */
 public class Pnl_Booking extends javax.swing.JPanel {
 
+
+    private String user, fname, lname;
     private MainUser mu;
+    ArrayList<String> slot;
+    
     public Pnl_Booking(MainUser mu) {
-        this.mu = mu;
+	this.mu = mu;
         initComponents();
+	
+    }
+    
+    public void clearTF(){
+	tf_license.setText("");
+	tf_user.setText("");
+    }
+    
+    public void clearArray(){
+	slot = new ArrayList<String>();
+    }
+    
+    public String getFname() {
+	return fname;
     }
 
+    public void setFname(String fname) {
+	this.fname = fname;
+    }
+
+    public String getLname() {
+	return lname;
+    }
+
+    public void setLname(String lname) {
+	this.lname = lname;
+    }
+    
+    public String getUser(){
+	return this.user;
+    }
+    
+    public String getLicense(){
+	return tf_license.getText();
+    }
+
+    public void test(){
+	for(String i : slot){
+	    System.out.println(i);
+	}
+    }
+    
+    public void addArraySlot(String availble){
+	slot.add(availble);
+    }
+    
+    public void updateSlot(){
+	for(int i = 0; i<24; i++){
+	    if(i == 0){
+		if(slot.get(i).equals("1")){
+		    bn_a1.setBackground(Color.RED);
+		    
+		}
+	    	else{
+		    bn_a1.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 1){
+		if(slot.get(i).equals("1")){
+		    bn_a2.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_a2.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 2){
+		if(slot.get(i).equals("1")){
+		    bn_a3.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_a3.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 3){
+		if(slot.get(i).equals("1")){
+		    bn_a4.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_a4.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 4){
+		if(slot.get(i).equals("1")){
+		    bn_a5.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_a5.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 5){
+		if(slot.get(i).equals("1")){
+		    bn_a6.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_a6.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 6){
+		if(slot.get(i).equals("1")){
+		    bn_b1.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_b1.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 7){
+		if(slot.get(i).equals("1")){
+		    bn_b2.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_b2.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 8){
+		if(slot.get(i).equals("1")){
+		    bn_b3.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_b3.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 9){
+		if(slot.get(i).equals("1")){
+		    bn_b4.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_b4.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 10){
+		if(slot.get(i).equals("1")){
+		    bn_b5.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_b5.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 11){
+		if(slot.get(i).equals("1")){
+		    bn_b6.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_b6.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 12){
+		if(slot.get(i).equals("1")){
+		    bn_c1.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_c1.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 13){
+		if(slot.get(i).equals("1")){
+		    bn_c2.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_c2.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 14){
+		if(slot.get(i).equals("1")){
+		    bn_c3.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_c3.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 15){
+		if(slot.get(i).equals("1")){
+		    bn_c4.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_c4.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 16){
+		if(slot.get(i).equals("1")){
+		    bn_c5.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_c5.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 17){
+		if(slot.get(i).equals("1")){
+		    bn_c6.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_c6.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 18){
+		if(slot.get(i).equals("1")){
+		    bn_d1.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_d1.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 19){
+		if(slot.get(i).equals("1")){
+		    bn_d2.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_d2.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 20){
+		if(slot.get(i).equals("1")){
+		    bn_d3.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_d3.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 21){
+		if(slot.get(i).equals("1")){
+		    bn_d4.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_d4.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 22){
+		if(slot.get(i).equals("1")){
+		    bn_d5.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_d5.setBackground(Color.GREEN);
+		}
+	    }
+	    if(i == 23){
+		if(slot.get(i).equals("1")){
+		    bn_d6.setBackground(Color.RED);
+		}
+	    	else{
+		    bn_d6.setBackground(Color.GREEN);
+		}
+	    }
+	  
+	    
+	    
+	}
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         pn_topic = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tf_license = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        tf_user = new javax.swing.JTextField();
         pn_parking = new javax.swing.JPanel();
         bn_a1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -89,8 +342,6 @@ public class Pnl_Booking extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 254));
         jLabel2.setText("License :");
 
-        jTextField1.setText("jTextField1");
-
         jButton1.setText("Search");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,8 +353,6 @@ public class Pnl_Booking extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 254));
         jLabel5.setText("User :");
 
-        jTextField3.setText("jTextField3");
-
         javax.swing.GroupLayout pn_topicLayout = new javax.swing.GroupLayout(pn_topic);
         pn_topic.setLayout(pn_topicLayout);
         pn_topicLayout.setHorizontalGroup(
@@ -112,14 +361,14 @@ public class Pnl_Booking extends javax.swing.JPanel {
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tf_license, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addGap(80, 80, 80)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         pn_topicLayout.setVerticalGroup(
             pn_topicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,10 +376,10 @@ public class Pnl_Booking extends javax.swing.JPanel {
                 .addContainerGap(25, Short.MAX_VALUE)
                 .addGroup(pn_topicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_license, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -138,6 +387,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.setBackground(new java.awt.Color(153, 153, 255));
         pn_parking.setLayout(null);
+
+        bn_a1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_a1MouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("A1");
 
@@ -161,6 +416,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_a1);
         bn_a1.setBounds(10, 10, 100, 100);
 
+        bn_a2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_a2MouseClicked(evt);
+            }
+        });
+
         jLabel10.setText("A2");
 
         javax.swing.GroupLayout bn_a2Layout = new javax.swing.GroupLayout(bn_a2);
@@ -182,6 +443,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_a2);
         bn_a2.setBounds(120, 10, 100, 100);
+
+        bn_a3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_a3MouseClicked(evt);
+            }
+        });
 
         jLabel17.setText("A3");
 
@@ -205,6 +472,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_a3);
         bn_a3.setBounds(230, 10, 100, 100);
 
+        bn_a4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_a4MouseClicked(evt);
+            }
+        });
+
         jLabel11.setText("A4");
 
         javax.swing.GroupLayout bn_a4Layout = new javax.swing.GroupLayout(bn_a4);
@@ -226,6 +499,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_a4);
         bn_a4.setBounds(340, 10, 100, 100);
+
+        bn_a5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_a5MouseClicked(evt);
+            }
+        });
 
         jLabel15.setText("A5");
 
@@ -249,6 +528,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_a5);
         bn_a5.setBounds(450, 10, 100, 100);
 
+        bn_a6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_a6MouseClicked(evt);
+            }
+        });
+
         jLabel16.setText("A6");
 
         javax.swing.GroupLayout bn_a6Layout = new javax.swing.GroupLayout(bn_a6);
@@ -270,6 +555,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_a6);
         bn_a6.setBounds(560, 10, 100, 100);
+
+        bn_b1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_b1MouseClicked(evt);
+            }
+        });
 
         jLabel18.setText("B1");
 
@@ -293,6 +584,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_b1);
         bn_b1.setBounds(10, 120, 100, 100);
 
+        bn_b2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_b2MouseClicked(evt);
+            }
+        });
+
         jLabel20.setText("B2");
 
         javax.swing.GroupLayout bn_b2Layout = new javax.swing.GroupLayout(bn_b2);
@@ -314,6 +611,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_b2);
         bn_b2.setBounds(120, 120, 100, 100);
+
+        bn_b3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_b3MouseClicked(evt);
+            }
+        });
 
         jLabel21.setText("B3");
 
@@ -337,6 +640,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_b3);
         bn_b3.setBounds(230, 120, 100, 100);
 
+        bn_b4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_b4MouseClicked(evt);
+            }
+        });
+
         jLabel25.setText("B4");
 
         javax.swing.GroupLayout bn_b4Layout = new javax.swing.GroupLayout(bn_b4);
@@ -358,6 +667,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_b4);
         bn_b4.setBounds(340, 120, 100, 100);
+
+        bn_b5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_b5MouseClicked(evt);
+            }
+        });
 
         jLabel26.setText("B5");
 
@@ -381,6 +696,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_b5);
         bn_b5.setBounds(450, 120, 100, 100);
 
+        bn_b6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_b6MouseClicked(evt);
+            }
+        });
+
         jLabel27.setText("B6");
 
         javax.swing.GroupLayout bn_b6Layout = new javax.swing.GroupLayout(bn_b6);
@@ -402,6 +723,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_b6);
         bn_b6.setBounds(560, 120, 100, 100);
+
+        bn_c1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_c1MouseClicked(evt);
+            }
+        });
 
         jLabel56.setText("C1");
 
@@ -425,6 +752,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_c1);
         bn_c1.setBounds(10, 230, 100, 100);
 
+        bn_c2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_c2MouseClicked(evt);
+            }
+        });
+
         jLabel36.setText("C2");
 
         javax.swing.GroupLayout bn_c2Layout = new javax.swing.GroupLayout(bn_c2);
@@ -446,6 +779,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_c2);
         bn_c2.setBounds(120, 230, 100, 100);
+
+        bn_c3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_c3MouseClicked(evt);
+            }
+        });
 
         jLabel58.setText("C3");
 
@@ -469,6 +808,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_c3);
         bn_c3.setBounds(230, 230, 100, 100);
 
+        bn_c4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_c4MouseClicked(evt);
+            }
+        });
+
         jLabel39.setText("C4");
 
         javax.swing.GroupLayout bn_c4Layout = new javax.swing.GroupLayout(bn_c4);
@@ -490,6 +835,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_c4);
         bn_c4.setBounds(340, 230, 100, 100);
+
+        bn_c5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_c5MouseClicked(evt);
+            }
+        });
 
         jLabel57.setText("C5");
 
@@ -513,6 +864,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_c5);
         bn_c5.setBounds(450, 230, 100, 100);
 
+        bn_c6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_c6MouseClicked(evt);
+            }
+        });
+
         jLabel64.setText("C6");
 
         javax.swing.GroupLayout bn_c6Layout = new javax.swing.GroupLayout(bn_c6);
@@ -534,6 +891,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_c6);
         bn_c6.setBounds(560, 230, 100, 100);
+
+        bn_d1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_d1MouseClicked(evt);
+            }
+        });
 
         jLabel59.setText("D1");
 
@@ -557,6 +920,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_d1);
         bn_d1.setBounds(10, 340, 100, 100);
 
+        bn_d2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_d2MouseClicked(evt);
+            }
+        });
+
         jLabel60.setText("D2");
 
         javax.swing.GroupLayout bn_d2Layout = new javax.swing.GroupLayout(bn_d2);
@@ -578,6 +947,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_d2);
         bn_d2.setBounds(120, 340, 100, 100);
+
+        bn_d3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_d3MouseClicked(evt);
+            }
+        });
 
         jLabel61.setText("D3");
 
@@ -601,6 +976,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_d3);
         bn_d3.setBounds(230, 340, 100, 100);
 
+        bn_d4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_d4MouseClicked(evt);
+            }
+        });
+
         jLabel62.setText("D4");
 
         javax.swing.GroupLayout bn_d4Layout = new javax.swing.GroupLayout(bn_d4);
@@ -623,6 +1004,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
         pn_parking.add(bn_d4);
         bn_d4.setBounds(340, 340, 100, 100);
 
+        bn_d5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_d5MouseClicked(evt);
+            }
+        });
+
         jLabel63.setText("D5");
 
         javax.swing.GroupLayout bn_d5Layout = new javax.swing.GroupLayout(bn_d5);
@@ -644,6 +1031,12 @@ public class Pnl_Booking extends javax.swing.JPanel {
 
         pn_parking.add(bn_d5);
         bn_d5.setBounds(450, 340, 100, 100);
+
+        bn_d6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bn_d6MouseClicked(evt);
+            }
+        });
 
         jLabel66.setText("D6");
 
@@ -671,8 +1064,353 @@ public class Pnl_Booking extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+	this.user = mu.userSearchFormLicense(tf_license.getText());
+	if(this.user.equals("")){
+	    this.user = "guess";
+	    this.fname = " ";
+	    this.lname = " ";
+	}
+	else{
+	    
+	}
+	tf_user.setText(this.user);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void bn_a1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_a1MouseClicked
+	if(slot.get(0).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(0).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("1");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_a1MouseClicked
+
+    private void bn_a2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_a2MouseClicked
+        if(slot.get(1).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(1).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("2");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_a2MouseClicked
+
+    private void bn_a3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_a3MouseClicked
+        if(slot.get(2).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(2).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("3");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_a3MouseClicked
+
+    private void bn_a4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_a4MouseClicked
+        if(slot.get(3).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(3).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("4");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_a4MouseClicked
+
+    private void bn_a5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_a5MouseClicked
+        if(slot.get(4).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(4).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("5");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_a5MouseClicked
+
+    private void bn_a6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_a6MouseClicked
+        if(slot.get(5).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(5).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("6");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_a6MouseClicked
+
+    private void bn_b1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_b1MouseClicked
+        if(slot.get(6).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(6).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("7");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_b1MouseClicked
+
+    private void bn_b2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_b2MouseClicked
+        if(slot.get(7).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(7).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("8");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_b2MouseClicked
+
+    private void bn_b3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_b3MouseClicked
+        if(slot.get(8).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(8).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("9");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_b3MouseClicked
+
+    private void bn_b4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_b4MouseClicked
+        if(slot.get(9).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(9).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("10");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_b4MouseClicked
+
+    private void bn_b5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_b5MouseClicked
+        if(slot.get(10).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(10).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("11");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_b5MouseClicked
+
+    private void bn_b6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_b6MouseClicked
+        if(slot.get(11).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(11).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("12");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_b6MouseClicked
+
+    private void bn_c1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_c1MouseClicked
+        if(slot.get(12).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(12).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("13");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_c1MouseClicked
+
+    private void bn_c2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_c2MouseClicked
+        if(slot.get(13).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(13).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("14");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_c2MouseClicked
+
+    private void bn_c3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_c3MouseClicked
+        if(slot.get(14).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(14).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("15");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_c3MouseClicked
+
+    private void bn_c4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_c4MouseClicked
+        if(slot.get(15).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(15).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("16");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_c4MouseClicked
+
+    private void bn_c5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_c5MouseClicked
+        if(slot.get(16).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(16).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("17");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_c5MouseClicked
+
+    private void bn_c6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_c6MouseClicked
+        if(slot.get(17).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(17).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("18");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_c6MouseClicked
+
+    private void bn_d1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_d1MouseClicked
+        if(slot.get(18).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(18).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("19");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_d1MouseClicked
+
+    private void bn_d2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_d2MouseClicked
+        if(slot.get(19).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(19).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("20");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_d2MouseClicked
+
+    private void bn_d3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_d3MouseClicked
+        if(slot.get(20).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(20).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("21");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_d3MouseClicked
+
+    private void bn_d4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_d4MouseClicked
+        if(slot.get(21).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(21).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("22");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_d4MouseClicked
+
+    private void bn_d5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_d5MouseClicked
+        if(slot.get(22).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(22).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("23");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_d5MouseClicked
+
+    private void bn_d6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bn_d6MouseClicked
+        if(slot.get(23).equals("1")){
+	    JOptionPane.showMessageDialog(null, "This slot is not availble");
+	}
+	else if(slot.get(23).equals("0")){
+	    if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		mu.bookSlotF1("24");
+	    } else {
+	     
+	    }
+	    
+	}
+    }//GEN-LAST:event_bn_d6MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -704,112 +1442,32 @@ public class Pnl_Booking extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel28;
-    private javax.swing.JPanel jPanel29;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
-    private javax.swing.JPanel jPanel32;
-    private javax.swing.JPanel jPanel33;
-    private javax.swing.JPanel jPanel34;
-    private javax.swing.JPanel jPanel35;
-    private javax.swing.JPanel jPanel37;
-    private javax.swing.JPanel jPanel38;
-    private javax.swing.JPanel jPanel39;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel40;
-    private javax.swing.JPanel jPanel41;
-    private javax.swing.JPanel jPanel42;
-    private javax.swing.JPanel jPanel43;
-    private javax.swing.JPanel jPanel44;
-    private javax.swing.JPanel jPanel45;
-    private javax.swing.JPanel jPanel46;
-    private javax.swing.JPanel jPanel47;
-    private javax.swing.JPanel jPanel48;
-    private javax.swing.JPanel jPanel49;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel50;
-    private javax.swing.JPanel jPanel51;
-    private javax.swing.JPanel jPanel52;
-    private javax.swing.JPanel jPanel53;
-    private javax.swing.JPanel jPanel54;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel65;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JPanel pn_parking;
     private javax.swing.JPanel pn_topic;
+    private javax.swing.JTextField tf_license;
+    private javax.swing.JTextField tf_user;
     // End of variables declaration//GEN-END:variables
 }

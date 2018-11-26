@@ -39,6 +39,14 @@ public class Pnl_Profile extends javax.swing.JPanel {
 	tf_license.setText(license);
     }
     
+    public void setCar(String car){
+	tf_car.setText(car);
+    }
+    
+    public String getCar(){
+	return tf_car.getText();
+    }
+    
     public String getFname() {
 	return tf_fname.getText();
     }
@@ -55,10 +63,6 @@ public class Pnl_Profile extends javax.swing.JPanel {
 	return tf_license.getText();
     }
     
-    public String getCar(){
-	return (String) selected_car;
-    }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -71,13 +75,13 @@ public class Pnl_Profile extends javax.swing.JPanel {
         tf_license = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         tf_phonenumber = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        update = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        searchUser = new javax.swing.JButton();
+        searchLicense = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tf_car = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setMinimumSize(new java.awt.Dimension(710, 624));
@@ -110,7 +114,6 @@ public class Pnl_Profile extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 254));
         jLabel1.setText("Username");
 
-        tf_user.setEditable(false);
         tf_user.setBackground(new java.awt.Color(35, 43, 43));
         tf_user.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         tf_user.setForeground(new java.awt.Color(254, 255, 255));
@@ -169,12 +172,12 @@ public class Pnl_Profile extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 254));
-        jButton1.setText("Update");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        update.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        update.setForeground(new java.awt.Color(255, 255, 254));
+        update.setText("Update");
+        update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                updateActionPerformed(evt);
             }
         });
 
@@ -202,26 +205,29 @@ public class Pnl_Profile extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton2.setText("search");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        searchUser.setText("search");
+        searchUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                searchUserActionPerformed(evt);
             }
         });
 
-        jButton3.setText("search");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        searchLicense.setText("search");
+        searchLicense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                searchLicenseActionPerformed(evt);
             }
         });
 
+        jLabel4.setBackground(new java.awt.Color(64, 64, 65));
         jLabel4.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 254));
         jLabel4.setText("Car brand");
 
-        jTextField1.setBackground(new java.awt.Color(35, 43, 43));
-        jTextField1.setText("Car brand");
-        jTextField1.setBorder(null);
+        tf_car.setBackground(new java.awt.Color(35, 43, 43));
+        tf_car.setForeground(new java.awt.Color(255, 255, 254));
+        tf_car.setText("Car brand");
+        tf_car.setBorder(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -230,7 +236,7 @@ public class Pnl_Profile extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(283, 283, 283))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -252,7 +258,7 @@ public class Pnl_Profile extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tf_phonenumber, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
-                                    .addComponent(jTextField1)))))
+                                    .addComponent(tf_car)))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -266,8 +272,8 @@ public class Pnl_Profile extends javax.swing.JPanel {
                                 .addComponent(tf_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(searchUser, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchLicense, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
@@ -278,7 +284,7 @@ public class Pnl_Profile extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(searchUser, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -287,7 +293,7 @@ public class Pnl_Profile extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_license, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(searchLicense, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_phonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,9 +301,9 @@ public class Pnl_Profile extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_car, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(94, 94, 94)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -342,23 +348,20 @@ public class Pnl_Profile extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_phonenumberActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        mu.formUpdate();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+        mu.formUpdate(getUser());
+    }//GEN-LAST:event_updateActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void searchUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchUserActionPerformed
+	mu.formSet(tf_user.getText());
+    }//GEN-LAST:event_searchUserActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void searchLicenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchLicenseActionPerformed
+        mu.formSet(mu.userSearchFormLicense(tf_license.getText()));
+    }//GEN-LAST:event_searchLicenseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -366,10 +369,13 @@ public class Pnl_Profile extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton searchLicense;
+    private javax.swing.JButton searchUser;
+    private javax.swing.JTextField tf_car;
     private javax.swing.JTextField tf_fname;
     private javax.swing.JTextField tf_license;
     private javax.swing.JTextField tf_phonenumber;
     private javax.swing.JTextField tf_user;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

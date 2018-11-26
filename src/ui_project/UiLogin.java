@@ -244,7 +244,7 @@ public class UiLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_exitLableKeyPressed
 
     private void exitLableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLableMouseClicked
-        System.exit(1);
+        System.exit(0);
     }//GEN-LAST:event_exitLableMouseClicked
 
     private void exitLableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLableMouseEntered

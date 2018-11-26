@@ -23,7 +23,7 @@ public class MainUser extends javax.swing.JFrame {
     private String bn_homec = "0", bn_profilec = "0", bn_checkoutc = "0", bn_addcarc = "0";
     private Connection con = null;
     private PreparedStatement pst, ps = null;
-    private ResultSet rs_carlist, rs_form, rs_license = null;
+    private ResultSet rs_form, rs_license, rs_slot, rs_name = null;
     
     public MainUser(String user, String isAdmin) {
         initComponents();
@@ -51,44 +51,148 @@ public class MainUser extends javax.swing.JFrame {
         multiPanel.add(profile, c);
         multiPanel.add(checkout, c);
         multiPanel.add(addcar, c);
-	formSet();
+	formSet(this.user);
+	updateArraySlot();
+	home.updateSlot();
         bn_Home.setBackground(new Color(104,26,228));
         home.setVisible(true);
         profile.setVisible(false);
         checkout.setVisible(false);
         addcar.setVisible(false);
+	home.test();
 
     }
 
     private MainUser(String user) {
     }   
     
-    public void formSet(){
+    public void clearTf(String but){
+	if(but == "user"){
+	    profile.setName("");
+	    profile.setPhonenumber("");
+	    profile.setLicense("");
+	    profile.setCar("");
+	}
+	else if(but == "license"){
+	    profile.setName("");
+	    profile.setPhonenumber("");
+	    profile.setUser("");
+	    profile.setCar("");
+	}
+    }
+    
+    public void bookSlotF1(String slot){
+	getNameSql(home.getUser());
+	try{
+	    String sql2 = "UPDATE `floor` SET  user = ?, fname = ?, lname = ?, license = ?, availble = 1 WHERE slot = ?";
+	    PreparedStatement ps = con.prepareStatement(sql2);
+	    ps.setString(1, home.getUser());
+	    ps.setString(2, home.getFname());
+	    ps.setString(3, home.getLname());
+	    ps.setString(4, home.getLicense());
+	    
+	    ps.setString(5, slot);
+	    
+	    if(ps.executeUpdate() > 0){
+		JOptionPane.showMessageDialog(null, "Booked");
+	    }
+	}catch(Exception ex){
+		
+	}
+	updateArraySlot();
+	home.updateSlot();
+	home.clearTF();
+    }
+    
+    
+    public void updateArraySlot(){
+	home.clearArray();
+	for(int i = 1; i<=24; i++){
+	    try{
+		String sql = "SELECT * FROM `floor` WHERE slot = ? ";
+		con = MyConnection.getConnection();
+		pst = con.prepareStatement(sql);
+		pst.setInt(1, i);
+		rs_slot = pst.executeQuery();
+		if(rs_slot.next()){
+		    home.addArraySlot(rs_slot.getString("availble"));
+		}
+	    }catch(Exception ex){
+	    
+	    }
+	}
+    }
+    
+    public void getNameSql(String user){
+	try{
+	    String sql = "SELECT * FROM `test` WHERE user = ? ";
+	    con = MyConnection.getConnection();
+	    pst = con.prepareStatement(sql);
+	    pst.setString(1, user);
+	    rs_name = pst.executeQuery();
+	    if(rs_name.next()){
+		home.setFname(rs_name.getString("fname"));
+		home.setLname(rs_name.getString("lname"));
+	    }
+	}catch(Exception ex){
+	    
+	}
+    }
+    
+    public String userSearchFormLicense(String license){
+	try{
+	    String sql = "SELECT * FROM `carlist` WHERE license = ?";
+	    con = MyConnection.getConnection();
+	    pst = con.prepareStatement(sql);
+	    pst.setString(1, license);
+	    rs_license = pst.executeQuery();
+	    if(rs_license.next()){
+		return rs_license.getString("user");
+	    }
+	    else{
+		JOptionPane.showMessageDialog(null, "License not found");
+		return "";
+		
+	    }
+            
+	    
+	}catch(Exception e){
+	    JOptionPane.showMessageDialog(null, e);
+	}
+	return "";
+    }
+    
+    public void formSet(String user){
 	try{
 	    String sql = "SELECT * FROM `test` WHERE user = ? ";
 	    con = MyConnection.getConnection();
 	    pst = con.prepareStatement(sql);
 	    pst.setString(1, user);
 	    rs_form = pst.executeQuery();
-	    while((rs_form!=null) && (rs_form.next())){
+	    if(rs_form.next()){
                 profile.setName(rs_form.getString("fname"));
 		profile.setUser(user);
 		profile.setPhonenumber(rs_form.getString("phonenumber"));
             }
+	    else{
+		JOptionPane.showMessageDialog(null, "User not found");
+		clearTf("user");
+	    }
+	    
 	    
 	    
 	}catch(Exception e){
 	    JOptionPane.showMessageDialog(null, e);
 	}
 	try{
-	    String sql = "SELECT * FROM `carlist` WHERE user = ? AND car = ?";
+	    String sql = "SELECT * FROM `carlist` WHERE user = ?";
 	    con = MyConnection.getConnection();
 	    pst = con.prepareStatement(sql);
-	    pst.setString(1, this.user);
-	    pst.setString(2, profile.getCar());
+	    pst.setString(1, user);
 	    rs_license = pst.executeQuery();
 	    while((rs_license!=null) && (rs_license.next())){
 		profile.setLicense(rs_license.getString("license"));
+		profile.setCar(rs_license.getString("car"));
             }
 	    
 	}catch(Exception e){
@@ -96,27 +200,27 @@ public class MainUser extends javax.swing.JFrame {
 	}
     }
     
-    public void formUpdate(){
+    public void formUpdate(String user){
 	try{
-	String sql = "UPDATE `test` SET fname = ?, lname = ?, phonenumber = ? WHERE user = ?";
+	String sql = "UPDATE `test` SET fname = ?, phonenumber = ? WHERE user = ?";
 	ps = con.prepareStatement(sql);
 	ps.setString(1, profile.getFname());
-	ps.setString(3, profile.getPhonenumber());
-	ps.setString(4, this.user);
+	ps.setString(2, profile.getPhonenumber());
+	ps.setString(3, user);
 	if(ps.executeUpdate() > 0){
-	    JOptionPane.showMessageDialog(null, "Update");
+	    JOptionPane.showMessageDialog(null, "Update name");
 	}
 	}catch(Exception e){
 	    JOptionPane.showMessageDialog(null, e);
 	}
 	try{
-	    String sql = "UPDATE `carlist` SET `license`= ? WHERE `user` = ? AND `car` = ?";
+	    String sql = "UPDATE `carlist` SET `license`= ?, `car` = ? WHERE `user` = ?";
 	    ps = con.prepareStatement(sql);
 	    ps.setString(1, profile.getLicense());
-	    ps.setString(2, this.user);
-	    ps.setString(3, profile.getCar());
+	    ps.setString(2, profile.getCar());
+	    ps.setString(3, user);
 	    if(ps.executeUpdate() > 0){
-	    JOptionPane.showMessageDialog(null, "Update");
+	    JOptionPane.showMessageDialog(null, "Update license");
 	}
 	}catch(Exception e){
 	    JOptionPane.showMessageDialog(null, e);
@@ -134,7 +238,7 @@ public class MainUser extends javax.swing.JFrame {
 	    con = MyConnection.getConnection();
 	    pst = con.prepareStatement(sql);
 	    pst.setString(1, this.user);
-	    pst.setString(2, profile.getCar());
+//	    pst.setString(2, profile.getCar());
 	    rs_license = pst.executeQuery();
 	    while((rs_license!=null) && (rs_license.next())){
 		profile.setLicense(rs_license.getString("license"));
@@ -398,6 +502,8 @@ public class MainUser extends javax.swing.JFrame {
 	bn_profilec = "0";
 	bn_addcarc = "0";
 	bn_checkoutc = "0";
+	updateArraySlot();
+	home.updateSlot();
 
     }//GEN-LAST:event_bn_HomeMouseClicked
 

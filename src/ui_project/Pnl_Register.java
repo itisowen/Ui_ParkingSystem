@@ -6,6 +6,7 @@
 package ui_project;
 
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,6 +24,16 @@ public class Pnl_Register extends javax.swing.JPanel {
         this.mu = mu;
         initComponents();
     }
+   
+    public void clearTF(){
+	tf_car.setText("");
+	tf_fname.setText("");
+	tf_lastname.setText("");
+	tf_license.setText("");
+	tf_phonenumber.setText("");
+	tf_user.setText("");
+   }
+   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -40,6 +51,8 @@ public class Pnl_Register extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         tf_license = new javax.swing.JTextField();
         button1 = new java.awt.Button();
+        jLabel5 = new javax.swing.JLabel();
+        tf_lastname = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(153, 153, 255));
         setMinimumSize(new java.awt.Dimension(710, 624));
@@ -50,7 +63,7 @@ public class Pnl_Register extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 254));
-        jLabel3.setText("Add Car");
+        jLabel3.setText("Register");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -72,12 +85,12 @@ public class Pnl_Register extends javax.swing.JPanel {
         jLabel2.setBackground(new java.awt.Color(35, 43, 43));
         jLabel2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 254));
-        jLabel2.setText("Fullname");
+        jLabel2.setText("Firstname");
 
         tf_fname.setBackground(new java.awt.Color(35, 43, 43));
         tf_fname.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         tf_fname.setForeground(new java.awt.Color(254, 255, 255));
-        tf_fname.setText("Fullname");
+        tf_fname.setText("Firstname");
         tf_fname.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         tf_fname.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -185,6 +198,27 @@ public class Pnl_Register extends javax.swing.JPanel {
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(35, 43, 43));
+        jLabel5.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 254));
+        jLabel5.setText("Lastname");
+
+        tf_lastname.setBackground(new java.awt.Color(35, 43, 43));
+        tf_lastname.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
+        tf_lastname.setForeground(new java.awt.Color(254, 255, 255));
+        tf_lastname.setText("Lastname");
+        tf_lastname.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tf_lastname.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tf_lastnameFocusGained(evt);
+            }
+        });
+        tf_lastname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_lastnameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -193,6 +227,8 @@ public class Pnl_Register extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(173, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(tf_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(tf_car, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
@@ -213,29 +249,33 @@ public class Pnl_Register extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
+                .addGap(5, 5, 5)
                 .addComponent(tf_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tf_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
+                .addGap(8, 8, 8)
                 .addComponent(tf_phonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tf_car, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(1, 1, 1)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(tf_license, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(43, 43, 43))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -291,6 +331,7 @@ public class Pnl_Register extends javax.swing.JPanel {
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         String fname1 = tf_fname.getText();
+	String lname1 = tf_lastname.getText();
         String user1 = tf_user.getText();
         String car1 = tf_car.getText();
         String license1 = tf_license.getText();
@@ -312,50 +353,59 @@ public class Pnl_Register extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter phonenumber");
         }
         else{
-//            PreparedStatement ps,ps2 = null;
-//
-//            String sql = "INSERT INTO `test`(`fname`, `lname`, `user`, `pass`, `phonenumber`, `memclass`) VALUES (?,?,?,?,?,'sliver')";
-//            try {
-//                ps = MyConnection.getConnection().prepareStatement(sql);
-//
-//                ps.setString(1, fname1);
-//                ps.setString(3, user1);
-//                ps.setString(5, phonenumber1);
-//                if(ps.executeUpdate() > 0){
-//                    sql = "INSERT INTO `carlist`(`car`, `license`, `user`, `book`) VALUES (?,?,?,'0')";
-//                    ps2 = MyConnection.getConnection().prepareStatement(sql);
-//                    ps2.setString(1, car1);
-//                    ps2.setString(2, license1);
-//                    ps2.setString(3, user1);
-//                    if(ps2.executeUpdate() > 0 ){
-//
-//                        JOptionPane.showMessageDialog(null, "User add");
-//                        log.setVisible(true);
-//                        log.pack();
-//                        log.setLocationRelativeTo(null);
-//                        log.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//
-//                        this.dispose();
-//                    }
-//                }
-//
-//            } catch (SQLException ex) {
-//                JOptionPane.showMessageDialog(null,ex);
-//            }
+            PreparedStatement ps,ps2 = null;
+
+            String sql = "INSERT INTO `test`(`fname`, `lname`, `user`, `pass`, `phonenumber`, `memclass`) VALUES (?,?,?,?,?,'sliver')";
+            try {
+                ps = MyConnection.getConnection().prepareStatement(sql);
+
+                ps.setString(1, fname1);
+		ps.setString(2, lname1);
+                ps.setString(3, user1);
+		ps.setString(4, "");
+                ps.setString(5, phonenumber1);
+                if(ps.executeUpdate() > 0){
+                    sql = "INSERT INTO `carlist`(`car`, `license`, `user`, `book`) VALUES (?,?,?,'0')";
+                    ps2 = MyConnection.getConnection().prepareStatement(sql);
+                    ps2.setString(1, car1);
+                    ps2.setString(2, license1);
+                    ps2.setString(3, user1);
+                    if(ps2.executeUpdate() > 0 ){
+
+                        JOptionPane.showMessageDialog(null, "User add");
+			clearTF();
+                    }
+                }
+
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null,ex);
+            }
         }
     }//GEN-LAST:event_button1ActionPerformed
+
+    private void tf_lastnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_lastnameFocusGained
+        if(tf_lastname.getText().equals("Lastname")){
+            tf_lastname.setText("");
+        }
+    }//GEN-LAST:event_tf_lastnameFocusGained
+
+    private void tf_lastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_lastnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_lastnameActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField tf_car;
     private javax.swing.JTextField tf_fname;
+    private javax.swing.JTextField tf_lastname;
     private javax.swing.JTextField tf_license;
     private javax.swing.JTextField tf_phonenumber;
     private javax.swing.JTextField tf_user;
