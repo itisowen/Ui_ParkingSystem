@@ -26,7 +26,7 @@
 
 	( เป็นการ Confirm เมื่อลูกค้ามาจอดจริง , ออกจากที่จอดรถจริง และยังสามารถ Cancel ได้เมื่อลูกค้าทำการยกเลิก )
 
-[Full Documentation](https://github.com/compro-itkmitl/Automatic-Plants-Watering-System/wiki)
+[Full Documentation](https://github.com/.../wiki)
 
 ---
 
