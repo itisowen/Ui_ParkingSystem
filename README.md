@@ -85,9 +85,9 @@
 # ![](images/member.png) Members
 |  |ชื่อ|นามสกุล|GitHub Username|รหัสนักศึกษา|
 |:-:|--|------|---------------|---------|
-|![](images/profile_peerapol.jpg)|Peerapol|Onhan|[@pumy2517](https://github.com/pumy2517)|60070067|
-|![](images/profile_pattarapong.jpg)|Pattarapong|Intubtim|[@mezz3](https://github.com/mezz3)|60070070|
-|![](images/profile_suthee.jpg)|Suthee|Pilamart|[@kpez](https://github.com/kpez)|60070105|
+|![](images/profile_peerapol.png)|Peerapol|Onhan|[@pumy2517](https://github.com/pumy2517)|60070067|
+|![](images/profile_pattarapong.png)|Pattarapong|Intubtim|[@mezz3](https://github.com/mezz3)|60070070|
+|![](images/profile_suthee.png)|Suthee|Pilamart|[@kpez](https://github.com/kpez)|60070105|
 
 # ![](images/teacher.png) Assistant Teacher
 |ผศ.ดร. ธนิศา นุ่มนนท์
