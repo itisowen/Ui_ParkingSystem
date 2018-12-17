@@ -36,9 +36,9 @@
 ---
 
 # ![](images/tools.png) Tools
-* Java SE Development Kit 8.0
-* Apache NetBeans IDE 9.0
-* MySQL Workbench 8.0 CE
+* Java SE Development Kit
+* Apache NetBeans IDE
+* MySQL Workbench CE
 
 ---
 
