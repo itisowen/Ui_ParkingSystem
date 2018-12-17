@@ -6,43 +6,56 @@
 ---
 
 # ![](images/help.png) How to use
-วิธีใช้นั้นง่าย ๆ ครับ
+1.	เข้าใช้งานที่ไฟล์ชื่อ Ui_project.jar อยู่ใน path /dist
+2.	สามารถทดลองใช้ โดยใช้รหัส Default คือ Username : admin , Password : admin
+3.	ผู้ให้บริการ ( Admin ) สามารถเข้าถึงได้ทุกส่วนในโปรแกรม
+	หน้าที่หลักของ Admin คือการทำ Booking ( จัดการที่จอดรถ )
+	Register ( การเพิ่ม Admin , Staff , User )
+	Profile ( แก้ไขข้อมูลได้ทั้ง Admin , Staff , User )
+	*สามารถเพิ่มระดับจาก Staff มาเป็น Admin ได้ แต่ผู้ที่แก้ไขต้องเป็น Admin เท่านั้น
+	แต่ Admin ก็สามารถทำการ Check In , Check Out ได้ ( ยามฉุกเฉิน )
+4.	พนักงาน ( Staff ) สามารถเข้าถึงได้แค่ระบบ Check In , Check Out
+	( เป็นการ Confirm เมื่อลูกค้ามาจอดจริง , ออกจากที่จอดรถจริง 
+	และยังสามารถ Cancel ได้เมื่อลูกค้าทำการยกเลิก )
 
 [Full Documentation](https://github.com/compro-itkmitl/Automatic-Plants-Watering-System/wiki)
 
 ---
 
 # ![](images/notebook.png) Library Requirements
-* [Blynk Library](https://github.com/blynkkk/blynk-library)
-* [LineNotify Library](https://github.com/TridentTD/TridentTD_LineNotify)
-* [ADS1X15 Library](https://github.com/adafruit/Adafruit_ADS1X15)
-* [Time Library](https://github.com/PaulStoffregen/Time)
+* [MySQL Connectors Library](https://github.com/mysql/mysql-connector-j)
 
 ---
 
 # ![](images/tools.png) Tools
-* WeMos D1R1 WiFi UNO Development Board ESP8266
-* I2C ADS1015 12-Bit ADC - 4 Channel
-* 1 Channel Relay
-* Soil Moisture Sensor
-* Light Sensor
-* Water Pump 6V
-* Battery 9V (2 ea)
-* Breadboard
-* Water Source
-* Plant
+* Java SE Development Kit 8.0
+* Apache NetBeans IDE 9.0
+* MySQL Workbench 8.0 CE
 
 ---
 
 # ![](images/picture.png) More Pictures
 
-แสดงถึงด้านหน้าและด้านข้างของอุปกรณ์
+## Login
+![](images/login.png)
 
-## Front View
-![](images/front.png)
+## Booking
+![](images/booking.png)
 
-## Side View
-![](images/side.png)
+## Check In
+![](images/check_in.png)
+
+## Check Out
+![](images/check_out.png)
+
+## Register
+![](images/register.png)
+
+## Profile
+![](images/profile.png)
+
+## Setup Database
+![](images/setup_db.png)
 
 ---
 
