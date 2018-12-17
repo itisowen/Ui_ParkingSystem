@@ -91,7 +91,7 @@
 
 # ![](images/teacher.png) Assistant Teacher
 |ผศ.ดร. ธนิศา นุ่มนนท์
-|:-:|:-:|
+|:-:|
 |![](images/aj_thanisa.png)
 
 รายงานนี้เป็นส่วนหนึ่งของวิชา Object Oriented Programming (รหัส 06016317)
