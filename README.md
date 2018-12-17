@@ -7,16 +7,24 @@
 
 # ![](images/help.png) How to use
 1.	เข้าใช้งานที่ไฟล์ชื่อ Ui_project.jar อยู่ใน path /dist
+
 2.	สามารถทดลองใช้ โดยใช้รหัส Default คือ Username : admin , Password : admin
+
 3.	ผู้ให้บริการ ( Admin ) สามารถเข้าถึงได้ทุกส่วนในโปรแกรม
+
 	หน้าที่หลักของ Admin คือการทำ Booking ( จัดการที่จอดรถ )
+	
 	Register ( การเพิ่ม Admin , Staff , User )
+	
 	Profile ( แก้ไขข้อมูลได้ทั้ง Admin , Staff , User )
+	
 	*สามารถเพิ่มระดับจาก Staff มาเป็น Admin ได้ แต่ผู้ที่แก้ไขต้องเป็น Admin เท่านั้น
+	
 	แต่ Admin ก็สามารถทำการ Check In , Check Out ได้ ( ยามฉุกเฉิน )
+	
 4.	พนักงาน ( Staff ) สามารถเข้าถึงได้แค่ระบบ Check In , Check Out
-	( เป็นการ Confirm เมื่อลูกค้ามาจอดจริง , ออกจากที่จอดรถจริง 
-	และยังสามารถ Cancel ได้เมื่อลูกค้าทำการยกเลิก )
+
+	( เป็นการ Confirm เมื่อลูกค้ามาจอดจริง , ออกจากที่จอดรถจริง และยังสามารถ Cancel ได้เมื่อลูกค้าทำการยกเลิก )
 
 [Full Documentation](https://github.com/compro-itkmitl/Automatic-Plants-Watering-System/wiki)
 
